@@ -3,152 +3,72 @@
 Pour accéder et gérer les documents, le responsable qualité à mis en place un dépôt Git hébergé sur le site GitHub.
 Chacun des membres de l’équipe auras donc accès à tout moment aux documents pour les éditer en ligne, ou hors ligne.
 
-
-Chaque document, sera rangé dans un dossier contenant ses sources au format texte, les documents joints, le livrable au format pdf, ainsi qu'un script permettant de créer le livrable facilement.
-
 La production de document se fera à l’aide de LaTeX.
 
+Chaque document, sera rangé dans un dossier contenant ses sources au format texte, les documents joints, le livrable au format pdf, ainsi qu'un  ainsi qu'un script \textt{make} permettant de créer le livrable facilement.
 
 \section{Description des documents sur le plan de la mise en forme}
 
 %Cette partie est à compléter, tu peux la continuer ou je l'achèverais plus tard, je craque là^^
 
-1. Page de garde
+% Je ne pense pas que la description de chaque élément soit necessaire.
+% Si c'était le cas, on pourrait la retrouver en recherchant dans les anciens commit de ce fichier avant le 6 janvier à 20h
+
+\subsection{Page de garde}
    Se référer au modèle en annexe 1.
 
-   1.1. Titre
-        - Au centre de la page
-        - Police : 
-        - Taille : 
-        - En gras, non italique, non souligné
-        - Couleur : noir
+   La presentation sera faite par LaTeX et sera ainsi parfaitement homogéne entre les documents.
 
-   1.2. Numéro de l'hexanome
-        - En bas à gauche du titre
-        - Police : 
-        - Taille : 
-        - En gras, non italique, non souligné
-        - Couleur : noir
+   La page de garde comportera :
+   \begin{itemize}
+      \item le titre.
+      \item le numéro de l'hexanôme.
+      \item les noms et prénoms des auteurs.
+      \item la date de dernière mise à jour du document.
+   \end{itemize}
 
-   1.3. Noms et prénoms des auteurs
-        - En bas de page
-        - Police : 
-        - Taille : 
-        - Les prénoms en non gras, non italique, non souligné
-        - Les noms en lettres majuscules et en gras, non italique, non souligné
-        - Couleur : noir
-
-   1.4. Date de dernière MAJ du document
-        - En bas de page
-        - Police : 
-        - Taille : 
-        - En gras, non italique, non souligné
-        - Couleur : noir
-
-2. Sommaire
+\subsection{Sommaire}
   
-   Le sommaire récapitule l'ensemble des pages ou se trouvent,
-les principaux titres ainsi que les titres secondaires et les sous titres.
-   La numérotation sera la même pour les titres et les sous titres (chiffres/nombres français
-dans l'ordre croissant).
-   Un numéro à droite de tous les titres et sous titres, indiquera la page du titre.
-   Un lien hypertexte permettra d'accéder à partir du sommaire, directement à l'ensemble des titres
-et sous titres.
+   Le sommaire récapitule l'ensemble des pages où se trouvent les titres des sections, des sous sections et des sous sous sections.
+   La numérotation des titres se fera en chiffre arabe, et un point séparera chaque niveau de numérotation.
+   La page où se trouve le titre sera indiqué à droite.
+   Un lien hypertexte permettra d'accéder à partir du sommaire, directement à l'ensemble des titres et sous titres.
 
-   2.1. Les principaux titres (Titre 1)
-        - Police : 
-        - Taille : 
-        - En gras, non italique, non souligné
-        - Couleur : noir
-
-   2.2. Les titres secondaires (Titre 2)
-        - Police : 
-        - Taille : 
-        - En gras, non italique, non souligné
-        - Couleur : noir
-
-   2.3. Les sous titres (Titre 3)
-        - Police : 
-        - Taille : 
-        - En gras, non italique, non souligné
-        - Couleur : noir
-
-3. Le texte
-
-   3.1. Les principaux titres (Titre 1)
-        - Police : 
-        - Taille : 
-        - En gras, non italique, non souligné
-        - Couleur : noir
-        - Aligner à gauche
-        - Un saut de ligne
-        - Numéroté
-
-   3.2. Les titres secondaires (Titre 2)
-        - Police : 
-        - Taille : 
-        - En gras, non italique, non souligné
-        - Couleur : noir
-        - Aligner à gauche
-        - Pas de saut de ligne
-        - Numéroté
-
-   3.3. Les sous titres (Titre 3)
-        - Police : 
-        - Taille : 
-        - En gras, non italique, non souligné
-        - Couleur : noir
-        - Aligner à gauche
-        - Pas de saut de ligne
-        - Numéroté
-
-   3.4. Le texte normal
-        - Police : 
-        - Taille : 
-        - En gras, non italique, non souligné
-        - Couleur : noir
-        - Texte justifiée
-
-4. La numérotation
+\subsection{La numérotation}
    
-   4.1. Les principaux titres
-        - Chiffres croissants
-        - Suivi d'un point
+   \subsubsection{titre de section}
+   \begin{itemize}
+        \item Chiffres croissants
+   \end{itemize}
+        Exemple : 1
 
-        Exemple : 1.
-
-   4.2. Les titres secondaires
-      - Numéro du titre principal
-      - Suivi d'un point
-      - Numéro du titre secondaire
-
+   \subsubsection{titre de sous section}
+   \begin{itemize}
+      \item Numéro de section parente
+      \item Suivi d'un point
+      \item Numéro de la sous section
+   \end{itemize}
         Exemple : 1.2
 
-   4.3. Les sous titres
-     - Numéro du titre principal
-      - Suivi d'un point
-      - Numéro du titre secondaire
-      - Suivi d'un point
-      - Numéro du sous titre
-
+   \subsubsection{titre de sous sous section}
+   \begin{itemize}
+      \item Numéro de section parente
+      \item Suivi d'un point
+      \item Numéro de la sous section
+      \item Suivi d'un point
+      \item Numéro de la sous sous section
+   \end{itemize}
         Exemple : 1.2.4
 
-5. Les puces
+    \subsection{Mise en page}
 
-   Les puces devront être de la forme suivante :
-   - Puces principales : petits losanges noirs
-   - Puces secondaires : petits carrés noirs
-   - Puces de niveau inférieurs : petit cercles noirs
-
-6. Mise en page
-
-   - Un pieds de page sera affecté à chaque page sauf celle de garde.
+     Un pieds de page sera affecté à chaque page sauf celle de garde.
      Celui-ci indiquera le numéro de page.
 
 \section{Le cycle de vie des documents}
 
-Pour accélérer au maximum le projet, l’idéal est de minimiser le cycle de vie des documents.
-Par exemple, ne pas rajouter d’étape supplémentaire de mise en page.
+Pour augmenter l'efficacité de l'équipe sur le projet, l’idéal est de minimiser le cycle de vie des documents.
+C'est pour cette raison que LaTeX à été choisi pour produire les documents. Ainsi, le temps de mise en page qui peut être long et fastidieux est économisé.
 
 %SCHÉMA A INSÉRER 
 %En ligne sur le google group, le nom du fichier PNG est "CycleVieDocument"
