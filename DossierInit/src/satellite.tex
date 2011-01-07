@@ -1,138 +1,564 @@
-\section{Gestion de la documentation du projet}
-
-Pour accéder et gérer les documents, le responsable qualité à mis en place un dépôt Git hébergé sur le site GitHub.
-Chacun des membres de l’équipe auras donc accès à tout moment aux documents pour les éditer en ligne, ou hors ligne.
-
-La production de document se fera à l’aide de LaTeX.
-
-Chaque document, sera rangé dans un dossier contenant ses sources au format texte, les documents joints, le livrable au format pdf, ainsi qu'un  ainsi qu'un script \texttt{make} permettant de créer le livrable facilement.
-
-\section{Description de la mise en forme des documents}
-
-%Cette partie est à compléter, tu peux la continuer ou je l'achèverais plus tard, je craque là^^
-
-% Je ne pense pas que la description de chaque élément soit necessaire.
-% Si c'était le cas, on pourrait la retrouver en recherchant dans les anciens commit de ce fichier avant le 6 janvier à 20h
-
-\subsection{Page de garde}
-   Se référer au modèle en annexe 1.
-
-   La presentation sera faite par LaTeX et sera ainsi parfaitement homogéne entre les documents.
-
-   La page de garde comportera :
-   \begin{itemize}
-      \item le titre.
-      \item le numéro de l'hexanôme.
-      \item les noms et prénoms des auteurs.
-      \item la date de dernière mise à jour du document.
-   \end{itemize}
-
-\subsection{Sommaire}
-  
-   Le sommaire récapitule l'ensemble des pages où se trouvent les titres des sections, des sous sections et des sous sous sections.
-   La numérotation des titres se fera en chiffre arabe, et un point séparera chaque niveau de numérotation.
-   La page où se trouve le titre sera indiqué à droite.
-   Un lien hypertexte permettra d'accéder à partir du sommaire, directement à l'ensemble des titres et sous titres.
-
-\subsection{La numérotation}
-   
-   \subsubsection{titre de section}
-   \begin{itemize}
-        \item Chiffres croissants
-   \end{itemize}
-        Exemple : 1
-
-   \subsubsection{titre de sous section}
-   \begin{itemize}
-      \item Numéro de section parente
-      \item Suivi d'un point
-      \item Numéro de la sous section
-   \end{itemize}
-        Exemple : 1.2
-
-   \subsubsection{titre de sous sous section}
-   \begin{itemize}
-      \item Numéro de section parente
-      \item Suivi d'un point
-      \item Numéro de la sous section
-      \item Suivi d'un point
-      \item Numéro de la sous sous section
-   \end{itemize}
-        Exemple : 1.2.4
-
-    \subsection{Mise en page}
-
-     Un pieds de page sera affecté à chaque page sauf celle de garde.
-     Celui-ci indiquera le numéro de page.
-
-\section{Le cycle de vie des documents}
-
-Pour augmenter l'efficacité de l'équipe sur le projet, l’idéal est de minimiser le cycle de vie des documents.
-C'est pour cette raison que LaTeX à été choisi pour produire les documents. Ainsi, le temps de mise en page qui peut être long et fastidieux est économisé.
-
-%SCHÉMA A INSÉRER 
-%En ligne sur le google group, le nom du fichier PNG est "CycleVieDocument"
-
-\section{La procédure interne de validation}
-
-La validation interne des livrables se fera de manière continue, tout au long de sa rédaction.
-Lorsque l’auteur juge avoir fini tout ou partie du document, il contacte le responsable qualité pour une première relecture. Le chef de projet pourras effectuer une seconde relecture.
-
-Si des corrections sont à faire, deux solutions sont possibles.
-En cas de corrections mineurs (fautes d’orthographes, quelques problèmes de présentations ...) la correction est effectué directement par le relecteur.
-En cas de correction majeur (problème de fond, irrespect du modèle de présentation ...) une demande de correction sera envoyé à l’auteur soulevant un problème ou en laissant des commentaires dans le document.
-
-Dans tout les cas, les relectures se feront le plus vite possible.
-L’auteur doit prévoir dans sa rédaction le temps nécessaire à la relecture et la correction afin d’éviter les retard dans la livraison du document.
-
-Les documents qu'on va réaliser passent dans plusieurs états au fur et à mesure de leur élaboration. Chaque document peut passer par plusieurs états selon son contenu. Voici les états possibles pour un document réalisé:
-
-%TABLEAU A INSÉRER
-%Le tableau est en ligne sur le google doc, dans le document nommé "paq",
-%il se trouve dans le chapitre "La procédure interne de validation" de ce document.
+Sommaire
+I.       INTRODUCTION.. 3
+I.I. Objet du projet 3
+I.II. Contexte général du projet 3
+II.      LIVRABLES. 3
+II.I. Initialisation et Organisation du projet 3
+II.II. Expression des besoins. 3
+II.III. Construction des scénarios. 3
+II.IV. Evaluation des scenarii 3
+II.V. Recette. 4
+III.           MODE OPERATOIRE ET PHASAGE. 4
+III.I. Choix de la méthode. 4
+III.II. Phases. 4
+III.II.I. Initialisation. 4
+III.II.II. Expression des besoins. 4
+III.II.III. Analyse et conception des solutions informatiques et   organisationnelles. 4
+III.II.IV. Elaboration et évaluation des scénarii 4
+IV.          IDENTIFICATION DES ACTIVITES ET DES TACHES. 5
+V.      ORGANISAATION DE L’EQUIPE. 5
+V.I. Chef de projet 5
+V.II. Responsable qualité. 5
+V.III. Responsable communication. 5
+V.IV. Expert Modelisation/Metier. 5
+V.V. Expert ERP. 5
+V.VI. Groupe étude. 6
+VI.          ANALYSE DES RISQUES. 6
+VI.I. Risques. 6
+VI.II. Gestion des risques. 6
 
 
-\section{La procédure de recette client}
+\section{Introduction}
 
-La procédure de validation du client pourras débuter à la date limite de rendu du livrable, sauf indication de retard. Le livrables sera déposé sur l'espace commun moodle dans la rubrique correspondante au document.
+\subsection{Objet du projet}
 
-Si le client est dans l’incapacité de récupérer le document (document corrompu, introuvable ...) il peut prévenir par mail le responsable communication afin que l’équipe puisse redéposer le livrable.
-Si moodle devenait inutilisable, les documents seraient livrés au client par mail temporairement.
+Le but de ce projet est d’améliorer le système d’information du domaine \emph{gestion de matériel} de l’entreprise GSTP.
 
-Une fois le document en possession du client, la relecture pourra prendre jusqu’à une semaine.
+L’objectif de ce projet étant une étude préalable, nous nous limiterons aux phases de spécifications et de conception du système d’information. Nous ne prendrons pas en charge les phases suivants l’étude préalable, c’est à dire : l’étude détaillée, la réalisation..
 
-En cas de non-validation, le client pourras contacter par mail ou pendant une réunion le responsable communication ou le chef d’équipe afin qu’il fasse remonter les remarques au reste de l’équipe.
-Il sera en charge de formuler les réclamation de manière compréhensible.
+\subsection{Contexte général du projet}
+GSTP est une entreprise de travaux, spécialisée dans le terrassement et le génie civil.
+Ceci représente une quarantaine de chantiers, répartis sur un rayon de 500 km.
+Au niveau de l’organisation de l’entreprise, sa structure est logiquement divisée en plusieurs services :
+\begin{itemize}
+    \item Direction Générale (DG)
+    \item Direction des ressources humaines (DRH)
+    \item Direction des finances et comptabilité (DFC)
+    \item Direction informatique (DI)
+    \item Direction du matériel (DM)
+    \item Direction travaux, études et méthodes (DTEM)
+\end{itemize}
+La direction des travaux, études et méthodes supervise les chantiers. Chaque chantier est autonome en fonctionnement et financièrement. Ainsi les besoins en matériels sont gérés par la direction des matériels. C’est une relation client-fournisseur interne à l’entreprise.
 
-En cas de correction à apporter au document, cette correction pourra être livré en 3 jours.
-Nous serons chargé de prévenir le client de la livraison d’une correction.
+Nous nous intéresserons plus particulièrement a la direction matériel et ses départements. La DM est attachée à la Direction Générale et a pour missions :
+\begin{itemize}
+    \item Affecter le matériel au chantier
+    \item Assurer la maintenance et la rénovation du matériel
+    \item Acquérir de nouveaux matériels
+    \item Gérer le stock de pièces de rechange
+    \item Louer/Facturer aux chantiers, l’utilisation du matériel
+\end{itemize}
+Pour gérer l’ensemble de ses départements, la direction matériel utilise de nombreuses applications (obsolètes) de gestion et de planification :
+\begin{itemize}
+    \item Département Matériel :
+        \subitem Gestion de planning
+        \subitem Facturation
+    \item Département maintenance:
+        \subitem Gestion de stocks de pièces de rechange
+        \subitem Planification de la maintenance
+    \item Département achat :
+        \subitem Gestion des fournisseurs
+        \subitem Gestion des bons de commande
+\end{itemize}
 
-\section{Les outils utilisés durant le projet}
 
-La gestion de la documentation se fera à l’aide de l’outil Git, hébergé sur le site gIThUB.
-GitHub pourras être utilisé pour remonter tout type de problème concernant la documentation.
-La rédaction de document se fera à l’aide de n’importe quel éditeur de texte.
-La production de la documentation se fera à l’aide de l'outil LaTeX.
+Ces applications sont indépendantes les unes des autres et ne sont intégrées dans aucun système d’information.
 
-Cette solution permettras à chacun  d’utiliser ces outils habituels d’éditions de textes, tout en assurant une cohérence parfaite entre les documents.
+\section{Livrables}
 
-msproject
-Pour prévoir les tâches à effectuer, et y affecter les ressources disponibles.
+Lors de la phase d’étude préalable, des livrables bien définis doivent être fournis aux clients. Ces derniers sont remis lors d’étapes spécifiques présentées ci-après.  L’objet de cette partie est de décrire le rôle et le contenu de chacun des ces livrables.
+\subsection{Initialisation et Organisation du projet}
 
-excel document de suivi
+A l’initialisation, deux documents doivent être rédigés. Lors de cette étape, il ne s’agit pas de chercher des solutions informatiques, mais de définir le cadre dans lequel nous nous attacherons à évoluer :
+
+\begin{itemize}
+    \item Document d’initialisation : ce document décrit notre démarche pour réaliser le projet, il présente les informations suivantes :
+    \begin{itemize}
+        \item présentation du contexte global et des objectifs clients.
+        \item les livrables attendus
+        \item le mode opératoire et le phasage
+        \item définition des tâches et planning,
+        \item l’organisation de l’équipe
+        \item l’analyse des risques
+    \end{itemize}
+    \item Plan d’assurance qualité : ce document décrit la mise en place de la politique qualité dans le contexte du projet. Il contient :
+    \begin{itemize}
+        \item la description des documents (dont les livrables) sur le plan de la mise en forme
+        \item le cycle de vie des documents
+        \item les ressources et outils
+        \item les modalités de validations internes et de recette
+        \item un annexe (contenant des parties de documents types ou des modèles)
+    \end{itemize}
+\end{itemize}
+
+\subsection{Expression des besoins
+
+Cette étape doit être réalisée en interaction avec le client. Il s’agit de comprendre ses attentes afin de les reformuler dans un document : le dossier d’expression des besoins.
+
+Il contient :
+\begin{itemize}
+    \item une présentation du contexte du projet (approche métier),
+    \item les éventuelles orientations stratégiques de la MOA
+    \item une analyse de l’existant (dont le SI)
+    \item la cible fonctionnelle (modèle de référence des activités et processus de l’entreprise).
+    \item les écarts avec l’existant (les dysfonctionnements)
+    \item les attentes des partenaires
+    \item le benchmarking
+    \item les thèmes de progrès
+\end{itemize}
+
+\subsection{Construction des scénarios}
+
+Un unique document sera fourni. Dans ce rapport, deux scénarios de mise en oeuvre seront envisagés : une solution spécifique et une solution standard de type ERP.
+
+Le document contiendra pour chaque scénario la démarche préconisée :
+\begin{itemize}
+    \item la nouvelle organisation
+    \item l’architecture technique
+    \item l’architecture applicative
+    \item l’architecture logicielle
+\end{itemize}
+\subsection{Evaluation des scénarios}
+
+Les deux scénarios présentés dans la partie précédente doivent ensuite être évalués et comparés afin de choisir celui que nous adopterons. Un livrable explicitant notre choix sera fourni, il doit permette au client de comprendre en quoi la solution choisie répond le mieux à son besoin.
+
+Pour chaque scénario, on va rassembler les éléments de choix, à savoir les points forts et les points faibles.
+
+
+\subsection{Restitution}
+
+C’est la dernière étape, un dossier bilan doit être livré. Le projet est également présenté oralement durant un rendez-vous client.
+
+Durant la présentation finale (powerpoint), nous exposerons notre démarche, présenterons les deux solutions et expliquerons les raisons de notre choix. Il s’agira de convaincre en mettant en avant les points forts de notre projet.
+
+En ce qui concerne le dossier bilan, il vient conclure la phase d’étude préalable. Il souligne :
+\begin{itemize}
+    \item les évolutions majeures apportées au produit livré par rapport à la définition présentée dans le dossier d’initialisation.
+    \item le plan de charges est actualisé, il met en avant les écarts et explique l’origine de ces écarts.
+    \item une  synthèse des difficultés rencontrées.
+\end{itemize}
+
+Un certain nombre de documents de suivi sont également réalisé tout au long du projet. Il sont cités ici à titre indicatif car il ne s’agit pas de livrables :
+\begin{itemize}
+    \item Tableau d’avancement des livrables intermédiaires
+    \item Tableau de suivi des charges
+        \subitem Fiche de suivi individuel par séance
+        \subitem Fiche de suivi global par séance
+\end{itemize}
+
+\section{Mode opératoire et phasage}
+
+\subsection{Choix de la méthode}
+
+Afin de réaliser cette étude préalable, nous avons opté pour la méthode MERISE, simplement parce qu'elle permet une décomposition du système d'information de l'entreprise en domaines et processus facilement analysables et donc utiles pour notre étude préalable. Nous capitalisons aussi sur le fait que l’existant est basé sur ce modèle.
+
+\subsection{Phases}
+
+Pour Chaque phase, nous préciserons sont but, son déroulement et le(s) livrable(s) attendu(s). Les phases de notre étude préalable sont les suivantes :
+
+\subsubsection{Initialisation}
+
+\subsubsubsection{Buts}
+\begin{itemize}
+    \item Cibler le champs d’étude du projet
+    \item Identifier les contraintes et risques
+    \item Elaborer notre démarche
+    \item Élaborer un plan d’assurance qualité
+\end{itemize}
+
+
+\subsubsubsection{Déroulement}
+\begin{description}
+    \item[Contexte général]{
+        Il s’agit de faire une introduction présentant brièvement l’entreprise, l’etat du service existant, ainsi que notre rôle dans ce projet.
+    }
+    \item[Livrables]{
+        Il s’agit d’élaborer une liste exhaustive des livrables.
+    }
+    \item[Mode opératoire et phasage]{
+        Il s’agit de choisir les méthodes à adopter, découper le projet en plusieurs phases.
+    }
+    \item[Activités / taches]{
+        Il s’agit d’identifier les taches et activités de chaque phase, les répartir entre les différents collaborateurs selon un planning prévisionnel.
+    }
+    \item[Organisation de l’équipe]{
+        Il s’agit de définir le rôle de chaque membre ainsi que ses principales missions au sein du projet.
+    }
+    \item[Analyse des risques]{
+        Il s’agit de faire une analyse prévisionnelle des risques liés au projet et élaborer un plan de gestion de ces risques.
+    }
+\end{description}
+
+\subsubsubsection{Livrables}
+\begin{itemize}
+    \item Dossier d’initialisation
+    \item Plan d'Assurance Qualité
+\end{itemize}
+
+\subsubsection{Expression des besoins}
+
+But :
+\begin{itemize}
+    Identifier les thèmes de progrès pour restreindre les futurs scénarios tout en répondant au mieux aux attentes du client.
+\end{itemize}
+
+
+\subsubsubsection{Déroulement}
+\begin{description}
+    \item[Contexte du projet dans l’entreprise GSTP]{
+        comprendre le modèle métier de l'entreprise, identifier les activités , les directions et services concernés par le projet ainsi que les processus stratégiques à analyser.
+    }
+    \item[Analyse de l’existant]{
+        etudier l’existant organisationnel et informatique afin d’identifier les ecarts par rapport à la stratégie de l’entreprise ainsi que les processus à modifier. 
+    }
+
+    \item[Normes et benchmarking]{
+        cette étape consiste à se renseigner sur les différentes normes et benchmarks existants, mais aussi au près des concurrents afin de comprendre leur méthode, identifier les avantages qu’ils en tirent.  Le but final étant de retenir les “best practice”.
+    }
+
+    \item[Cible de référence]{
+        il faut élaborer un modèle de référence des processus de l’entreprise à partir des dysfonctionnements relevés, des “best practice” retenue, des attentes clients,..  et indépendemment  des moyens organisationnels et informatiques.
+    }
+
+    \item[Thèmes de progès]{
+        identifier les axes d’amélioration.
+    }
+\end{description}
+
+\subsubsubsection{Livrables}
+\begin{itemize}
+    \item Dossier d’expression des besoins (EB)
+\end{itemize}
+
+\subsubsection{Analyse et conception des solutions informatiques et organisationnelles}
+
+\subsubsubsection{Buts}
+\begin{itemize}
+    \item[Proposer deux solutions distinctes]{
+        l’une étant spécifique (construite de A à Z, pour répondre le plus précisément possible aux besoins), l’autre plus standard (basé sur des systèmes standards de type ERP, qui seront adaptés au besoin).
+    }
+\end{itemize}
+
+
+\subsubsubsection{Déroulement}
+\begin{itemize}
+    \item Analyse et conception
+        \subitem Définitions des stratégies d’informations
+        \subitem Analyse générale de l’architecture applicative cible
+        \subitem Conception générale de l’architecture applicative cible
+    \item Démarche pour la mise en place d’une solution spécifique
+        \subitem Analyse des impacts organisationnels
+        \subitem Analyse des impacts informatiques (architectures technique, applicative, logicielle).
+    \item Analyse  des solutions existantes du marché/Choix d’une solution :
+        \subitem Analyse des impacts organisationnels
+        \subitem Analyse des impacts informatiques (architectures technique, applicative, logicielle).
+\end{itemize}
+
+\subsubsubsection{Livrables}
+\begin{itemize}
+    \item Dossier Description des Scénarios
+\end{itemize}
+
+\subsubsection{Évaluation des scénarios}
+
+\subsubsubsection{Buts}
+\begin{itemize}
+    Évaluer les différents scénarios et en faire ressortir les avantages et inconvénients de chacun afin de construire une étude comparative..
+    Choisir la solution qui nous semble la plus adaptée aux besoins du clients.
+\end{itemize}
+
+\subsubsubsection{Déroulement}
+\begin{itemize}
+    \item Évaluation des solutions : il s’agit de comparer les deux scénarios et d’en voir les différences. Une présentation des avantages/inconvénients de ces scénarios semble intéressante à produire.
+    \item Choix \HUGE{TODO}
+\end{itemize}
+
+\subsubsubsection{Livrables}
+\begin{itemize}
+    \item Dossier de choix
+\end{itemize}
+
+\section{Identification des activités et des tâches}
+
+Pour planifier l’étude préalable, il est fondamentale d’identifier l’ensemble des activités et les tâches qui y sont associées. Celles que nous avons identifié sont :
+\begin{itemize}
+    \item Suivi de projet : \bf{A1}
+        \subitem Organisation
+        \subitem Planification
+        \subitem Évaluation
+        \subitem Pilotage/Suivi
+
+    \item Gestion/Contrôle de documents : \bf{A2}
+        \subitem Diffusion PAQ
+        \subitem Respect PAQ
+        \subitem Validation des livrables
+        \subitem Organisation des réunions internes
+        \subitem Organisation des rencontres avec le client
+
+    \item Production : \bf{A3}
+        \subitem Elaboration des livrables
+        \subitem Réalisation des rapports
+        \subitem Mise en commun des informations
+\end{itemize}
+
+Pour representer l’ordonnancement des tâches, nous allons utilisé un diagramme de GANT (fait avec MS Project) qui montrera le positionnement des tâches sur l’échelle du temps et l’utilisation des ressources (membres du projet).
+
+
+Elaboration du GANT du projet PLD
+
+    Taches de l’activité A1 (Suivi de projet)
+        Organisation le projet
+        Elaboration du planning prévisionnel
+        Prise en main de MS Project
+        Elaboration du diagramme de GANTT du projet
+        Supervision du travail des collaborateurs
+        Redaction des fiches de suivi
+            Fiche de suivi d’avancement des livrables intermédiaires
+            Fiche de suivi individuel
+            Fiche de suivi global
+
+
+    Taches de l’activité A2 (Gestion/Contrôle de documents)
+
+        Diffuser le  PAQ à tous les collaborateurs
+        Controler la qualité des documents (mise en forme et cohérence des documents) par le RQ et le CP
+            Contrôle du document d’initialisation
+            Contrôle du Plan d’assurance qualité
+            Contrôle du dossier d’expression des besoins
+            Contrôle du dossier de description des scénarios
+
+            Contrôle du dossier modélisation et configuration standard
+            Contrôle du dossier de choix
+
+        Validation des livrables (relecture) par le RQ et le CP
+            Validation du document d’initialisation
+            Validation du Plan d’assurance qualité
+            Validation du dossier d’expression des besoins
+            Validation du dossier de description des scénarios
+
+            Validation du dossier modélisation et configuration standard
+            Validation du dossier de choix
+
+        Organiser de façon périodique des réunions internes
+            Revues ponctuelles en cas de questions en suspens
+            Réunion de chantier en début de séance
+            Réunion de coordination en fin de séance
+        Organisation des réunions avec le client
+            Réunion ponctuelle sur demande du responsable communication
 
 
 
-\section{ANNEXES}
-Annexe 1 : Exemple de la page de garde
-    Insérer Modèle
-Annexe 2 : Fiche de suivi individuel par séance
-    Insérer Modèle
-Annexe 3 : Fiche global de suivi
-    Insérer Modèle
-Annexe 4 : Fiche de suivi d'avancement des livrables
-    Insérer Modèle
-Annexe 5 : Journal de réunions
-    Modèle
-Annexe 6 : Tableau de bord d'avancement
-    Insérer Modèle
+    Taches de l’activité A3 (Production )
+        Phase 1
+            Lecture du sujet
+            Analyse du champ d’étude du projet
+            Ebauche du dossier d’initialisation
+            Ebauche du PAQ
+            Redaction du dossier d’initialisation
+                Objet et Contexte du projet
+                Livrables attendus
+                Mode opératoire et phasage
+                Identification des taches et activités
+                Organisation de l’équipe
+                Analyse des risques
+            Rédaction du paq
+                Description des documents sur le plan de la mise en forme
+                Modalité de validations internes et recette
+                Cycle de vie des documents
+                Ressources et outils
+        Phase 2
+            Analyse du SI existant
+                SI Organisationnel
+                    Analyse les modèles existants (MCD, MCT..)
+                    Mise à jour des modèles existants (MCD, MCT..)
+                SI Informatique
+                    Analyser l’existant informatique
+                    Synthétiser et rediger l’existant informatique
+            Normes et benchmarking
+                Collecter des informations pour le benchmarking : les “best practice”
+                Synthetiser et rediger la partie sur le benchmarking
+                Comparer avec l’existant et detecter les dysfonctionnements
+                Rediger les dysfonctionnements
+            Cible de fonctionnement
+                Etudier les attentes du client, les informations collectées et les dysfonctionnements
+                Rediger les attentes du client
+            Thèmes de progrès
+                Rédiger les thèmes de progrès stratégiques
+                Rédiger les thèmes de progrès fonctionnelles
+                Rédiger les thèmes de progrès technologiques
+        Phase 3
+            Elaboration de la solution spécifique : S1
+                Etudier la nouvelle organisation
+                Etudier l’architecture technique
+                Etudier l’architecture logicielle
+                Etudier l’architecture applicative
+                Rediger le scénario de S1
+            Elaboration de la solution standard type ERP : S2
+                Etudier les solutions standards du marché
+                Choisir une solution du marché
+                Etudier la nouvelle organisation
+                Etudier l’architecture technique
+                Etudier l’architecture logicielle
+                Etudier l’architecture applicative
+                Rediger le scénario de S2
+        Phase 4
+            Dossier de Choix d’un scénario
+                Evaluer et comparer les scénarios
+                Evaluer les risques
+                Evaluer les couts
+            Dossier Bilan
+                Evaluer l’évolution des livrables
+                Etablir le bilan des charges
+                Synthèse des difficultés
+            Présentation orale
+                Rédiger la présentation orale
+                Simuler la présentation orale
+
+
+
+\section{Organisation de l'équipe}
+
+L’équipe projet sera organisé ainsi :
+\subsection{Chef de projet : Naby Daouda \textsc{Diakite}}
+
+Son rôle sera :
+
+    Suivi stratégique du projet
+        Evaluation risques
+        Respect des objectifs
+        Respects des délais
+    Pilotage opérationnel
+        Planification des taches
+        Suivi et encadrement des tâches
+    Organisation humaine
+        Définition du role des membres et leur responsabilité
+        Résolution de conflits et arbitrage
+    Pilotage de la production
+        Suivi des résultats et livrables
+        Méthodes et outils
+
+    Production des livrables
+
+\subsection{Responsable qualité : Etienne \textsc{Brodu}}
+
+Son rôle sera :
+
+    Charte qualité
+    Cohérence entre les livrables
+    Rédaction, MAJ  et Respect PAQ
+    Production des livrables
+
+
+\subsection{Responsable communication : Johann \textsc{Chazelle}}
+
+Son rôle sera :
+
+    Communication interne et externe
+    CR de réunions
+    Recensement des difficultés des collaborateurs
+    Production des livrables
+
+
+
+\subsection{Expert Modelisation/Metier : Chafik \textsc{Bachatene}}
+
+Son rôle sera :
+
+    Identification des processus métiers
+    Analyse et Conception de l’architecture générale
+    Aide à la Modélisation et configuration des solutions 
+
+
+\subsection{Expert ERP : Baptiste \textsc{Lecornu}}
+
+Son rôle sera :
+
+    Connaissance des normes et benchmarks ERP
+
+    Aide à la Modélisation et configuration des solutions 
+
+
+\subsection{Groupe étude : Adrien \textsc{Brochot} et Thanh \textsc{Phan Duc}}
+
+Son rôle sera :
+
+    Production livrable
+    Aide à la planification du projet
+    Responsable de la qualité des taches qu’il réalise
+
+
+
+\section{Analyse des risques}
+\subsection{Risques}
+
+Les risques sont les suivants :
+
+    R1 :  Risque humains (liés aux compétence, abscence, maladie..)
+    R2 : Apparition de tâches supplémentaires liées à la saisie des livrables ( rapport)
+    R3 : Difficulté d’évaluation du temps nécessaire à chaque tâche(prise en main des outils et méthodes utilisés,...)
+    R4 : Spécification incomplète des points à traiter
+    R5 : Risque de surqualité
+    R6 : Délais tendus
+    R7 : Demande régulière de modification durant l’élaboration des solutions
+
+
+
+\subsection{Gestion des risques}
+
+Les solutions que nous préconisons sont :
+
+    S1:
+        Imposer un certain nombre de règles à suivre pour le bon déroulement du projet et veiller au respect de ceux-ci. Si nécessaire formaliser ces règles sous forme de “règlement intérieur”
+        Motiver suffisamment les membres de l’équipe  et répartir les tâches en fonction des profils et des compétences de chacun
+        Redistribuer le travail du membre indisponible aux autres membres de l’équipe durant toute la durée de son indisponibilité.
+    S2:
+    Prévoir des créneaux horaires (hors séance) pour la prise en main des outils utilisés  et la centralisation de façon efficace des différents livrables.
+
+    S3:
+    Contrôle du planning prévisionnel et mise à jour de celui-ci et si nécessaire réaffectation des tâches
+    S4:
+    S’adresser au client pour éclaircir les points flous
+    S5:
+    Contrôler de façon permanente l’avancement des tâches et les documents produit
+
+
+    Maquetage
+
+    S6 :
+
+
+    Planification détaillée du projet avec un GANTT
+    Suivi de l’avancement des livrables
+
+    S7 :
+
+
+    Seuil d’acceptation des modifications
+    Report des modifications en fin de projet
+    Gestion de versions
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
