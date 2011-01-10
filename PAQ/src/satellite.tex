@@ -7,6 +7,8 @@ Chacun des membres de l’équipe auras donc accès à tout moment aux documents
 
 La production de document se fera à l’aide de LaTeX.
 
+\subsection{Description d'un document type}
+
 Chaque document, sera rangé dans un dossier contenant ses sources au format texte, les documents joints, le livrable au format pdf, ainsi qu'un  ainsi qu'un script \texttt{make} permettant de créer le livrable facilement.
 
 L'arborescence d'un document type pourrait être :
@@ -15,12 +17,19 @@ L'arborescence d'un document type pourrait être :
     \begin{description}
         \item[main.tex]{Le fichier {\bf main.tex} est le fichier principale du livreable, il contient toutes les informations relatives au document (titres, auteurs, dates ...).}
         \item[nation.tex] {Le fichier {\bf nation.tex} est inclus par {\bf main.tex} et contient les specifications de mise en forme du document final.}
-        \item[satellite.tex] {Le fichier {\bf satellite.tex} est inclus par {\bf main.tex} et contient tout le corps du document. C'est ce fichier qui sera principalement édité par les membres de l'équipes}
+        \item[satellite.tex] {Le fichier {\bf satellite.tex} est inclus par {\bf main.tex} et contient tout le corps du document. C'est ce fichier qui sera principalement édité par les membres de l'équipes.}
+        \item[img] {Le dossier {\bf img} contient toutes les illustrations, schémas etc contenu dans le document.}
     \end{description}
-    \item [bin]{Le dossier {\bf bin} ne contient que le livreable au format pdf}
+    \item [bin]{Le dossier {\bf bin} ne contient que le livreable au format pdf.}
     \item [tmp]{Le dossier {\bf tmp} sert de dossier temporaire pour la compilation du document final. Il n'existe pas sur le dépôt commun.}
     \item [Makefile]{Le fichier {\bf Makefile} est un script permettant d'automatiser la génération du document.}
 \end{description}
+
+\subsection{Création d'un document}
+
+\`A la création d'un document, on met en place le dossier correspondant en le copiant depuis un model.
+La première étape consiste ensuite à remplir les informations relatives aux auteurs, au titre et au nom du document dans le fichier main.tex et dans le Makefile.
+Ensuite, l'écriture du document peut commencer.
 
 \section{Description de la mise en forme des documents}
 
@@ -108,6 +117,16 @@ Les documents qu'on va réaliser passent dans plusieurs états au fur et à mesu
 %Le tableau est en ligne sur le google doc, dans le document nommé "paq",
 %il se trouve dans le chapitre "La procédure interne de validation" de ce document.
 
+\begin{tabular}{ll}
+    {\bf Version}                                                                                 & {\bf \'Etat}\\ \hline
+    Document initial : document non validé,\\en cours d'élaboration                               & Première version \\ \hline
+    Document analysé par le chef de projet et\\le responsable qualité, mais non validé            & \`A modifier \\ \hline
+    Document modifié depuis la dernière analyse\\par le chef de projet et le responsable qualité. & Modifié \\ \hline
+    Document validé par le chef de projet et le\\responsable qualité                              & Validé \\ \hline
+
+
+\end{tabular}
+
 
 \section{La procédure de recette client}
 
@@ -129,6 +148,7 @@ Nous serons chargé de prévenir le client de la livraison d’une correction.
 La gestion de la documentation se fera à l’aide de l’outil Git, hébergé sur le site GitHub.
 GitHub pourras être utilisé pour remonter tout type de problème concernant la documentation, et ainsi suivre l'évolution et la discussion autour du problème.
 GitHub permettant de versionner les fichiers, il sera facile de suivre l'évolution de la production du document.
+
 Chaque auteur, après une modification devras écrire un court commentaire concernant sa modification.
 Il sera également facile de remonter les modifications et de réparer les erreurs très rapidement.
 
@@ -136,22 +156,21 @@ La rédaction de document se fera à l’aide de n’importe quel éditeur de te
 La production de la documentation se fera à l’aide de l'outil LaTeX.
 
 Pour augmenter l'efficacité de l'équipe sur le projet, l’idéal est de minimiser le cycle de vie des documents.
-C'est pour cette raison que LaTeX à été choisi pour produire les documents. Ainsi, le temps de mise en page qui peut être long et fastidieux est économisé.
+C'est pour cette raison que LaTeX à été choisi pour produire les documents.
+Ainsi, le temps de mise en page qui peut être long et fastidieux est économisé.
 
 Cette solution permettras à chacun  d’utiliser ces outils habituels d’éditions de textes, tout en assurant une cohérence parfaite entre les documents.
 
 \section{ANNEXES}
 \begin{description}
-\item[Annexe 1 : Exemple de la page de garde]
-    {Insérer Modèle}
-\item[Annexe 2 : Fiche de suivi individuel par séance]
+\item[Annexe 1 : Fiche de suivi individuel par séance]
     Insérer Modèle
-\item[Annexe 3 : Fiche global de suivi]
+\item[Annexe 2 : Fiche global de suivi]
     Insérer Modèle
-\item[Annexe 4 : Fiche de suivi d'avancement des livrables]
+\item[Annexe 3 : Fiche de suivi d'avancement des livrables]
     Insérer Modèle
-\item[Annexe 5 : Journal de réunions]
-    Modèle
-\item[Annexe 6 : Tableau de bord d'avancement]
+\item[Annexe 4 : Journal de réunions]
+    Insérer Modèle
+\item[Annexe 5 : Tableau de bord d'avancement]
     Insérer Modèle
 \end{description}
