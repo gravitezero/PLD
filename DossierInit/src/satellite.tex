@@ -250,7 +250,7 @@ Pour Chaque phase, nous préciserons sont but, son déroulement et le(s) livrabl
 \paragraph{Déroulement}
 \begin{itemize}
     \item Évaluation des solutions : il s’agit de comparer les deux scénarios et d’en voir les différences. Une présentation des avantages/inconvénients de ces scénarios semble intéressante à produire.
-    \item Choix \huge{TODO}
+    \item Choix
 \end{itemize}
 
 \paragraph{Livrables}
@@ -262,20 +262,20 @@ Pour Chaque phase, nous préciserons sont but, son déroulement et le(s) livrabl
 
 Pour planifier l’étude préalable, il est fondamentale d’identifier l’ensemble des activités et les tâches qui y sont associées. Celles que nous avons identifié sont :
 \begin{itemize}
-    \item Suivi de projet : \bf{A1}
+    \item Suivi de projet : {\bf A1}
         \subitem Organisation
         \subitem Planification
         \subitem Évaluation
         \subitem Pilotage/Suivi
 
-    \item Gestion/Contrôle de documents : \bf{A2}
+    \item Gestion/Contrôle de documents : {\bf A2}
         \subitem Diffusion PAQ
         \subitem Respect PAQ
         \subitem Validation des livrables
         \subitem Organisation des réunions internes
         \subitem Organisation des rencontres avec le client
 
-    \item Production : \bf{A3}
+    \item Production : {\bf A3}
         \subitem Elaboration des livrables
         \subitem Réalisation des rapports
         \subitem Mise en commun des informations
@@ -480,47 +480,60 @@ Son rôle sera :
 \section{Analyse des risques}
 \subsection{Risques}
 
-\huge{TODO, faire des compteurs}
+\newcounter{risques}
+\setcounter{risques}{0}
 
+\newcommand{\risque}[1]{
+    \addtocounter{risques}{1}
+    \item[R\therisques]{\indent#1}
+}
 Les risques sont les suivants :
 \begin{description}
-    \item[R1]{Risque humains (liés aux compétence, abscence, maladie..)}
-    \item[R2]{Apparition de tâches supplémentaires liées à la saisie des livrables ( rapport)}
-    \item[R3]{Difficulté d’évaluation du temps nécessaire à chaque tâche(prise en main des outils et méthodes utilisés,...)}
-    \item[R4]{Spécification incomplète des points à traiter}
-    \item[R5]{Risque de surqualité}
-    \item[R6]{Délais tendus}
-    \item[R7]{Demande régulière de modification durant l’élaboration des solutions}
+    \risque{Risque humains (liés aux compétence, abscence, maladie..)}
+    \risque{Apparition de tâches supplémentaires liées à la saisie des livrables ( rapport)}
+    \risque{Difficulté d’évaluation du temps nécessaire à chaque tâche(prise en main des outils et méthodes utilisés,...)}
+    \risque{Spécification incomplète des points à traiter}
+    \risque{Risque de surqualité}
+    \risque{Délais tendus}
+    \risque{Demande régulière de modification durant l’élaboration des solutions}
 \end{description}
 
-\subsection{Gestion des risques}
+\subsubsection{Gestion des risques}
+
+\newcounter{solutions}
+\setcounter{solutions}{0}
+
+\newcommand{\solution}[1]{
+    \addtocounter{solutions}{1}
+    \item[S\thesolutions]{\indent#1}
+}
 
 Les solutions que nous préconisons sont :
 \begin{description}
-    \item[S1]{
+    \solution{
         \begin{itemize}
             \item Imposer un certain nombre de règles à suivre pour le bon déroulement du projet et veiller au respect de ceux-ci. Si nécessaire formaliser ces règles sous forme de “règlement intérieur”.
             \item Motiver suffisamment les membres de l’équipe  et répartir les tâches en fonction des profils et des compétences de chacun
             \item Redistribuer le travail du membre indisponible aux autres membres de l’équipe durant toute la durée de son indisponibilité.
         \end{itemize}}
-    \item[S2]{
+    \solution{
         Prévoir des créneaux horaires (hors séance) pour la prise en main des outils utilisés  et la centralisation de façon efficace des différents livrables.}
 
-    \item[S3]{
+    \solution{
         Contrôle du planning prévisionnel et mise à jour de celui-ci et si nécessaire réaffectation des tâches}
-    \item[S4]{
+    \solution{
         S’adresser au client pour éclaircir les points flous}
-    \item[S5]{
+    \solution{
         \begin{itemize}
             \item Contrôler de façon permanente l’avancement des tâches et les documents produit
             \item Maquetage
         \end{itemize}}
-    \item[S6]{
+    \solution{
         \begin{itemize}
             \item Planification détaillée du projet avec un GANTT
             \item Suivi de l’avancement des livrables
         \end{itemize}}
-    \item[S7]{
+    \solution{
         \begin{itemize}
             \item Seuil d’acceptation des modifications
             \item Report des modifications en fin de projet

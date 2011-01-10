@@ -1,24 +1,43 @@
 \section{Gestion de la documentation du projet}
 
-Pour accéder et gérer les documents, le responsable qualité à mis en place un dépôt Git hébergé sur le site GitHub.
+La totalité de la documentation du projet sera hébérgé sur l'espace collaboratif GitHub.
+
+GitHub met à disposition des membres de l'équipes, un dépot git afin de versionner les fichiers et de centraliser les modifications.
 Chacun des membres de l’équipe auras donc accès à tout moment aux documents pour les éditer en ligne, ou hors ligne.
 
 La production de document se fera à l’aide de LaTeX.
 
 Chaque document, sera rangé dans un dossier contenant ses sources au format texte, les documents joints, le livrable au format pdf, ainsi qu'un  ainsi qu'un script \texttt{make} permettant de créer le livrable facilement.
 
+L'arborescence d'un document type pourrait être :
+\begin{description}
+    \item[src]{Le dossier {\bf src} contient les fichiers textes composant le livreable.}
+    \begin{description}
+        \item[main.tex]{Le fichier {\bf main.tex} est le fichier principale du livreable, il contient toutes les informations relatives au document (titres, auteurs, dates ...).}
+        \item[nation.tex] {Le fichier {\bf nation.tex} est inclus par {\bf main.tex} et contient les specifications de mise en forme du document final.}
+        \item[satellite.tex] {Le fichier {\bf satellite.tex} est inclus par {\bf main.tex} et contient tout le corps du document. C'est ce fichier qui sera principalement édité par les membres de l'équipes}
+    \end{description}
+    \item [bin]{Le dossier {\bf bin} ne contient que le livreable au format pdf}
+    \item [tmp]{Le dossier {\bf tmp} sert de dossier temporaire pour la compilation du document final. Il n'existe pas sur le dépôt commun.}
+    \item [Makefile]{Le fichier {\bf Makefile} est un script permettant d'automatiser la génération du document.}
+\end{description}
+
 \section{Description de la mise en forme des documents}
 
-%Cette partie est à compléter, tu peux la continuer ou je l'achèverais plus tard, je craque là^^
+\subsection{La mise en forme des documents sources}
+    Pour assurer une meilleur relecture et compréhension des fichiers textes par tout les membres de l'équipe, quelques règles devront être appliqués :
+    \begin{itemize}
+        \item Le texte sera indenté en fonction de sont importance (section, sous section, sous sous section, paragraphe, sous paragraphe etc ...)
+        \item Chaque niveau d'indentation se fera par 4 espaces.
+        \item Ne pas hésiter à aérer le texte en passant à la ligne et en insérant des espaces de compréhension entre les commandes.
+        \item Les règles de ponctuation du français devront être respecté.
+    \end{itemize}
 
-% Je ne pense pas que la description de chaque élément soit necessaire.
-% Si c'était le cas, on pourrait la retrouver en recherchant dans les anciens commit de ce fichier avant le 6 janvier à 20h
-\huge{todo: ranger dans des section ?}
-La mise en forme des documents sources
-L'indentation se fera par 4 espaces.
-
-La mise en forme finale des documents sera faite par LaTeX et sera ainsi parfaitement homogéne entre les documents.
-
+\subsection{La mise en forme des documents finaux}
+La mise en forme finale des documents sera faite par LaTeX.
+Ainsi elle sera parfaitement homogéne entre tous les documents, et certaines parties des documents pourront être automatisés.
+Une tête de page sera affecté à chaque page du document excépté la page de garde, elle indiquera le titre du document.
+Un pieds de page sera affecté à chaque page du document, il indiquera le numéro de page.
 
 \subsection{Page de garde}
    Se référer au modèle en annexe 1.
@@ -42,7 +61,7 @@ La mise en forme finale des documents sera faite par LaTeX et sera ainsi parfait
    
    \subsubsection{titre de section}
    \begin{itemize}
-        \item Chiffres croissants
+        \item Numéro de la section
    \end{itemize}
         Exemple : 1
 
@@ -64,15 +83,7 @@ La mise en forme finale des documents sera faite par LaTeX et sera ainsi parfait
    \end{itemize}
         Exemple : 1.2.4
 
-    \subsection{Mise en page}
-
-     Un pieds de page sera affecté à chaque page sauf celle de garde.
-     Celui-ci indiquera le numéro de page.
-
 \section{Le cycle de vie des documents}
-
-Pour augmenter l'efficacité de l'équipe sur le projet, l’idéal est de minimiser le cycle de vie des documents.
-C'est pour cette raison que LaTeX à été choisi pour produire les documents. Ainsi, le temps de mise en page qui peut être long et fastidieux est économisé.
 
 %SCHÉMA A INSÉRER 
 %En ligne sur le google group, le nom du fichier PNG est "CycleVieDocument"
@@ -114,22 +125,18 @@ Nous serons chargé de prévenir le client de la livraison d’une correction.
 \section{Les outils utilisés durant le projet}
 
 La gestion de la documentation se fera à l’aide de l’outil Git, hébergé sur le site GitHub.
-GitHub pourras être utilisé pour remonter tout type de problème concernant la documentation.
+GitHub pourras être utilisé pour remonter tout type de problème concernant la documentation, et ainsi suivre l'évolution et la discussion autour du problème.
 GitHub permettant de versionner les fichiers, il sera facile de suivre l'évolution de la production du document.
-Chaque auteur, après une modification devras commenter cette modification.
+Chaque auteur, après une modification devras écrire un court commentaire concernant sa modification.
 Il sera également facile de remonter les modifications et de réparer les erreurs très rapidement.
 
-La rédaction de document se fera à l’aide de n’importe quel éditeur de texte.
+La rédaction de document se fera à l’aide de n’importe quel éditeur de texte, ou de l'outils en ligne proposé par GitHub.
 La production de la documentation se fera à l’aide de l'outil LaTeX.
 
+Pour augmenter l'efficacité de l'équipe sur le projet, l’idéal est de minimiser le cycle de vie des documents.
+C'est pour cette raison que LaTeX à été choisi pour produire les documents. Ainsi, le temps de mise en page qui peut être long et fastidieux est économisé.
+
 Cette solution permettras à chacun  d’utiliser ces outils habituels d’éditions de textes, tout en assurant une cohérence parfaite entre les documents.
-
-msproject
-Pour prévoir les tâches à effectuer, et y affecter les ressources disponibles.
-
-excel document de suivi
-
-
 
 \section{ANNEXES}
 \begin{description}
