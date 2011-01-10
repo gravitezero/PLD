@@ -1,8 +1,8 @@
 \section{Gestion de la documentation du projet}
 
-La totalité de la documentation du projet sera hébérgé sur l'espace collaboratif GitHub.
+La totalité de la documentation du projet sera hébergé sur l'espace collaboratif GitHub.
 
-GitHub met à disposition des membres de l'équipes, un dépot git afin de versionner les fichiers et de centraliser les modifications.
+GitHub met à disposition des membres de l'équipes, un dépôt git afin de versionner les fichiers et de centraliser les modifications.
 Chacun des membres de l’équipe auras donc accès à tout moment aux documents pour les éditer en ligne, ou hors ligne.
 
 La production de document se fera à l’aide de LaTeX.
@@ -13,14 +13,14 @@ Chaque document, sera rangé dans un dossier contenant ses sources au format tex
 
 L'arborescence d'un document type pourrait être :
 \begin{description}
-    \item[src]{Le dossier {\bf src} contient les fichiers textes composant le livreable.}
+    \item[src]{Le dossier {\bf src} contient les fichiers textes composant le livrable.}
     \begin{description}
-        \item[main.tex]{Le fichier {\bf main.tex} est le fichier principale du livreable, il contient toutes les informations relatives au document (titres, auteurs, dates ...).}
-        \item[nation.tex] {Le fichier {\bf nation.tex} est inclus par {\bf main.tex} et contient les specifications de mise en forme du document final.}
+        \item[main.tex]{Le fichier {\bf main.tex} est le fichier principale du livrable, il contient toutes les informations relatives au document (titres, auteurs, dates ...).}
+        \item[nation.tex] {Le fichier {\bf nation.tex} est inclus par {\bf main.tex} et contient les spécifications de mise en forme du document final.}
         \item[satellite.tex] {Le fichier {\bf satellite.tex} est inclus par {\bf main.tex} et contient tout le corps du document. C'est ce fichier qui sera principalement édité par les membres de l'équipes.}
         \item[img] {Le dossier {\bf img} contient toutes les illustrations, schémas etc contenu dans le document.}
     \end{description}
-    \item [bin]{Le dossier {\bf bin} ne contient que le livreable au format pdf.}
+    \item [bin]{Le dossier {\bf bin} ne contient que le livrable au format pdf.}
     \item [tmp]{Le dossier {\bf tmp} sert de dossier temporaire pour la compilation du document final. Il n'existe pas sur le dépôt commun.}
     \item [Makefile]{Le fichier {\bf Makefile} est un script permettant d'automatiser la génération du document.}
 \end{description}
@@ -44,8 +44,8 @@ Ensuite, l'écriture du document peut commencer.
 
 \subsection{La mise en forme des documents finaux}
 La mise en forme finale des documents sera faite par LaTeX.
-Ainsi elle sera parfaitement homogéne entre tous les documents, et certaines parties des documents pourront être automatisés.
-Une tête de page sera affecté à chaque page du document excépté la page de garde, elle indiquera le titre du document.
+Ainsi elle sera parfaitement homogène entre tous les documents, et certaines parties des documents pourront être automatisés.
+Une tête de page sera affecté à chaque page du document excepté la page de garde, elle indiquera le titre du document.
 Un pieds de page sera affecté à chaque page du document, il indiquera le numéro de page.
 
 \subsection{Page de garde}
@@ -58,7 +58,7 @@ Un pieds de page sera affecté à chaque page du document, il indiquera le numé
       \item la date de dernière mise à jour du document.
     \end{itemize}
     La première page de ce document peut servir d'exemple.
-    Dans la pratique, la page de garde est décrite dans un fichier différent du corp du document, et est généré automatiquement à partir des informations ci-dessus.
+    Dans la pratique, la page de garde est décrite dans un fichier différent du corps du document, et est généré automatiquement à partir des informations ci-dessus.
 
 \subsection{Sommaire}
   
@@ -132,7 +132,7 @@ Les documents qu'on va réaliser passent dans plusieurs états au fur et à mesu
 
 La procédure de validation du client pourras débuter à la date limite de rendu du livrable, sauf indication de retard. Le livrables sera déposé sur l'espace commun moodle dans la rubrique correspondante au document.
 
-Si le client est dans l’incapacité de récupérer le document (document corrompu, introuvable ...) il peut prévenir par mail le responsable communication afin que l’équipe puisse redéposer le livrable.
+Si le client est dans l’incapacité de récupérer le document (document corrompu, introuvable ...) il peut prévenir par mail le responsable communication afin que l’équipe puisse déposer de nouveau le livrable.
 Si moodle devenait inutilisable, les documents seraient livrés au client par mail temporairement.
 
 Une fois le document en possession du client, la relecture pourra prendre jusqu’à une semaine.
@@ -147,12 +147,12 @@ Nous serons chargé de prévenir le client de la livraison d’une correction.
 
 La gestion de la documentation se fera à l’aide de l’outil Git, hébergé sur le site GitHub.
 GitHub pourras être utilisé pour remonter tout type de problème concernant la documentation, et ainsi suivre l'évolution et la discussion autour du problème.
-GitHub permettant de versionner les fichiers, il sera facile de suivre l'évolution de la production du document.
+GitHub permettant un suivi de version des fichiers, il sera facile de suivre l'évolution de la production du document.
 
 Chaque auteur, après une modification devras écrire un court commentaire concernant sa modification.
 Il sera également facile de remonter les modifications et de réparer les erreurs très rapidement.
 
-La rédaction de document se fera à l’aide de n’importe quel éditeur de texte, ou de l'outils en ligne proposé par GitHub.
+La rédaction de document se fera à l’aide de n’importe quel éditeur de texte, ou de l'outil en ligne proposé par GitHub.
 La production de la documentation se fera à l’aide de l'outil LaTeX.
 
 Pour augmenter l'efficacité de l'équipe sur le projet, l’idéal est de minimiser le cycle de vie des documents.
