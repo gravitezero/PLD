@@ -1,5 +1,7 @@
 digraph structOrga {
 
+    rankdir = LR;
+
     SIEGE [label = "Siège" shape = house];
     CHANTIER [label = "Chantier" shape = house];
 
