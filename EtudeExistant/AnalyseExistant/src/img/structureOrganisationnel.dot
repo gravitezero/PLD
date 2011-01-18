@@ -1,0 +1,110 @@
+digraph structOrga {
+
+    rankdir = LR;
+
+    SIEGE [label = "Siège" shape = house];
+    CHANTIER [label = "Chantier" shape = house];
+
+    DIR_FINANCE_COMPTA [label = "Direction Finance & Comptabilité" shape = box]
+    DIRECTION_TRAVAUX [label = "Direction des travaux" shape = box]
+    DIRECTION_MATERIEL [label = "Direction du materiel" shape = box]
+
+    DEPARTEMENT_MAT [label = "Département Materiel" shape = box]
+    DEPARTEMENT_MAINT [label = "Département Maintenance" shape = box]
+    DEPARTEMENT_ACHAT [label = "Département Achat" shape = box]
+
+    MAGASIN_PR [label = "Magasin Pièces de rechange" shape = box]
+    SCE_MAINTENANCE [label = "Service Maintenance" shape = box]
+
+    ATELIER [label = "Atelier" shape = box]
+
+    SCE_GEST_FOURN [label = "SCE Gestion des Fourniture" shape = box]
+    SCE_ACHAT_MAT [label = "Service Achat Materiel" shape = box]
+    SCE_ACHAT_PR [label = "Service Achat Pièce de rechange" shape = box]
+    SCE_LOCATION_MAT [label = "Service Location Materiel" shape = box]
+
+    SCE_GEST_MAT [label = "Service Gestion du materiel" shape = box]
+    GEST_PARC_MAT [label = "Gestion du parc materiel" shape = box]
+    FACTURATION_MAT [label = "Facturation du materiel" shape = box]
+
+
+    AFFECTATION_MAT [label = "Affectation du materiel" shape = box]
+
+    RECEPTION_MATERIEL [label = "Reception du materiel" shape = box]
+    GESTION_PARC_MAT [label = "Gestion du parc materiel" shape = box]
+
+    VALORISATION_MAT [label = "Valorisation du materiel" shape = box]
+    FACTURATION_MAT_ [label = "Facturation du materiel" shape = box]
+
+
+    GESTION_FOURNISSEUR [label = "Gestion des fournisseurs" shape = box]
+    ACHAT_MATERIEL [label = "Achat du materiel" shape = box]
+    ACHAT_PR [label = "Achat des pièces de rechanges" shape = box]
+    GEST_CONTRAT_LOC [label = "Gestion des contrats de locations" shape = box]
+
+    TRAITEMENTDE_M_MAINT [label = "Traitement de Materiel en Maintenance" shape = box]
+    EXECUTIONOP_MAINT [label = "Execution des Opérations de Maintenance" shape = box]
+    VALORISATION_OP_MAIN [label = "Valorisation des Opérations de Maintenance" shape = box]
+
+    AFFECTATION_MAT [label = "Affectation du Materiel" shape = box]
+
+    RECEPTION_MATERIEL [label = "Reception du materiel" shape = box]
+    GESTION_PARC_MAT [label = "Gestion du parc de materiel" shape = box]
+
+    VALORISATION_MAT [label = "Valorisation du materiel" shape = box]
+    FACTURATION_MAT_ [label = "Facturation du materiel" shape = box]
+
+    VALORISATION_PR [label = "Valorisation des pièces de rechange" shape = box]
+    APPRO_PR [label = "Approvisionnement Pièces de rechange" shape = box]
+    RECEPTION_PR [label = "Reception des pièces de rechange" shape = box]
+    GESTION_BS [label = "Gestion BS" shape = box]
+
+    PLANIFICATION_MAINT [label = "Planification Maintenance" shape = box]
+
+    SIEGE -> DIR_FINANCE_COMPTA
+    SIEGE -> DIRECTION_TRAVAUX
+    SIEGE -> DIRECTION_MATERIEL
+
+        DIRECTION_TRAVAUX -> CHANTIER
+
+        DIRECTION_MATERIEL -> DEPARTEMENT_MAT
+        DIRECTION_MATERIEL -> DEPARTEMENT_MAINT
+        DIRECTION_MATERIEL -> DEPARTEMENT_ACHAT
+
+            DEPARTEMENT_MAT -> SCE_GEST_MAT
+            DEPARTEMENT_MAT -> GEST_PARC_MAT
+            DEPARTEMENT_MAT -> FACTURATION_MAT
+
+                SCE_GEST_MAT -> AFFECTATION_MAT
+
+                GEST_PARC_MAT -> RECEPTION_MATERIEL
+                GEST_PARC_MAT -> GESTION_PARC_MAT
+
+                FACTURATION_MAT -> VALORISATION_MAT
+                FACTURATION_MAT -> FACTURATION_MAT_
+
+            DEPARTEMENT_MAINT -> MAGASIN_PR
+            DEPARTEMENT_MAINT -> SCE_MAINTENANCE
+
+                MAGASIN_PR -> VALORISATION_PR
+                MAGASIN_PR -> APPRO_PR
+                MAGASIN_PR -> RECEPTION_PR
+                MAGASIN_PR -> GESTION_BS
+
+                SCE_MAINTENANCE -> PLANIFICATION_MAINT
+                SCE_MAINTENANCE -> ATELIER
+
+                    ATELIER -> TRAITEMENTDE_M_MAINT
+                    ATELIER -> EXECUTIONOP_MAINT
+                    ATELIER -> VALORISATION_OP_MAIN
+
+            DEPARTEMENT_ACHAT -> SCE_GEST_FOURN
+            DEPARTEMENT_ACHAT -> SCE_ACHAT_MAT
+            DEPARTEMENT_ACHAT -> SCE_ACHAT_PR
+            DEPARTEMENT_ACHAT -> SCE_LOCATION_MAT
+
+                SCE_GEST_FOURN -> GESTION_FOURNISSEUR
+                SCE_ACHAT_MAT -> ACHAT_MATERIEL
+                SCE_ACHAT_PR -> ACHAT_PR
+                SCE_LOCATION_MAT -> GEST_CONTRAT_LOC
+}

@@ -2,7 +2,7 @@ SRC = src
 TMP = tmp
 BIN = bin
 TEX_BASE_NAME = main
-PDF_BASE_NAME = Exemple
+PDF_BASE_NAME = model
 
 all:
-	cp $(SRC)/*.tex $(TMP)/ && cd $(TMP) && pdflatex $(TEX_BASE_NAME).tex && mv $(TEX_BASE_NAME).pdf ../$(BIN)/$(PDF_BASE_NAME).pdf
+	mkdir -p $(TMP) && cp -r $(SRC)/* $(TMP)/ && cd $(TMP) && pdflatex $(TEX_BASE_NAME).tex && mv $(TEX_BASE_NAME).pdf ../$(BIN)/$(PDF_BASE_NAME).pdf
