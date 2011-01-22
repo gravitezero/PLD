@@ -1,6 +1,7 @@
 SRC = src
 TMP = tmp
 BIN = bin
+IMG = img
 TEX_BASE_NAME = main
 PDF_BASE_NAME = Etude\ de\ l\'Existant
 
@@ -8,7 +9,8 @@ all:
 	mkdir -p $(TMP) ; \
 	for i in AnalyseExistant NormesBench Cible ; do \
 	mkdir -p $(TMP)/$$i ; \
-	cp -r $$i/$(SRC)/* $(TMP)/$$i/ ; \
+	cp $$i/$(SRC)/* $(TMP)/$$i/ ; \
+	cp -r $$i/$(SRC)/$(IMG)/ $(TMP)/ ; \
 	done ; \
 	cp -r $(SRC)/* $(TMP)/ ; \
 	cd $(TMP) ; \
