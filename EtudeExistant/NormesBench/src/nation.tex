@@ -10,7 +10,8 @@
 
 \usepackage[final]{pdfpages} 
 
-\usepackage{hyperref}
+\usepackage[hypertexnames=false, pdftex]{hyperref}
+\hypersetup{ colorlinks = true, linkcolor = black, urlcolor = blue, citecolor = blue }
 
 \usepackage[top=20mm, bottom=20mm, left=25mm, right=25mm]{geometry}
 
@@ -21,13 +22,14 @@
 
 \usepackage{verbatim}
 \usepackage{amsmath}
-\usepackage[table]{xcolor}
-\definecolor{bleugris}{rgb}{.2,.4,.5}
 
-\definecolor{colKeys}{rgb}{0,0,1} 
-\definecolor{colIdentifier}{rgb}{0,0,0} 
-\definecolor{colComments}{rgb}{0,0.5,1} 
-\definecolor{colString}{rgb}{0.6,0.1,0.1} 
+%\usepackage[table]{xcolor}
+%\definecolor{bleugris}{rgb}{.2,.4,.5}
+
+%\definecolor{colKeys}{rgb}{0,0,1} 
+%\definecolor{colIdentifier}{rgb}{0,0,0} 
+%\definecolor{colComments}{rgb}{0,0.5,1} 
+%\definecolor{colString}{rgb}{0.6,0.1,0.1} 
 
 \usepackage{listings}
 
@@ -38,10 +40,10 @@
 \newcommand{\addCode}[2]{%
 
   % Configuration de la coloration syntaxique du code
-  \definecolor{colKeys}{rgb}{0,0,1}
-  \definecolor{colIdentifier}{rgb}{0,0,0}
-  \definecolor{colComments}{rgb}{0,0.5,1}
-  \definecolor{colString}{rgb}{0.6,0.1,0.1}
+  %\definecolor{colKeys}{rgb}{0,0,1}
+  %\definecolor{colIdentifier}{rgb}{0,0,0}
+  %\definecolor{colComments}{rgb}{0,0.5,1}
+  %\definecolor{colString}{rgb}{0.6,0.1,0.1}
 
   % Configuration des options 
   \lstset{%
