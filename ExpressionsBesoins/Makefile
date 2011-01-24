@@ -3,7 +3,7 @@ TMP = tmp
 BIN = bin
 IMG = img
 TEX_BASE_NAME = main
-PDF_BASE_NAME = Etude\ de\ l\'Existant
+PDF_BASE_NAME = Expression\ des\ Besoins
 
 all:
 	mkdir -p $(TMP) ; \
