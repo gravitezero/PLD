@@ -103,3 +103,39 @@
 \makeatother
 
 \setlength{\headheight}{14pt}
+
+\newcommand{\fontrubrique}[1]{%
+    \textbf{#1}
+}
+
+\newlength{\largeurtitre}
+\newlength{\largeurligne}
+\newcommand{\rubrique}[1]{%
+    \setlength{\largeurtitre}{0pt}
+    \setlength{\largeurligne}{0pt}
+    \settowidth{\largeurtitre}{\fontrubrique{#1}}
+    \addtolength{\largeurligne}{\textwidth}
+    \addtolength{\largeurligne}{-\largeurtitre}
+    \addtolength{\largeurligne}{-4pt}
+    \bigskip
+    \fontrubrique{#1} \raisebox{0.3em}{\vrule depth 0pt height 0.1pt width \largeurligne}
+}
+
+\newcommand{\comparatif}[4]{
+	{%
+	\setlength{\parindent}{0pt}
+	\rubrique{#1}
+	}
+
+	#2\\~\\
+	\begin{minipage}[t]{0.4\textwidth}
+		\textbf{Avantages}~\\
+			#3
+	\end{minipage}
+	\begin{minipage}[t]{0.4\textwidth}
+		\textbf{Inconvenients}~\\
+			#4
+	\end{minipage}
+	\vspace{0.5cm}
+	
+}
