@@ -1,33 +1,72 @@
-\section{Prise en main de latex}
-\subsection{Installation}
-	\begin{description}
-		\item[Linux]~\\
-			\texttt{sudo aptitude install texlive-full}
-		\item[Windows]~\\
-			\href{http://mirror.ctan.org/systems/texlive/tlnet/install-tl.zip}{lien}
-	\end{description}
+\section{Présentation}
+L’un des axes de progrès défini lors de l’expression des besoins consiste en une informatisation conséquente du système. L’objet du présent document est ainsi de définir l’architecture applicative mise en place. Celle-ci s’appuie sur l’architecture technique détaillée dans son livrable spécifique.
+Nous choisissons de mettre en place une application centralisée. GSTP peut opter pour une application Web ou locale. La deuxième solution impliquant un déploiement conséquent optimiserait l’ergonomie et limiterait durée des différents traitements. Ainsi, via une connexion à un réseau VPN dédié à l’entreprise, l’utilisateur accèderait à différents modules en fonction de son statut (chef de chantier, responsable location, …).
+L’application est découpée en 5 modules distincts :
+\begin{itemize}
+	\item Module planification
+	\item Suivi des chantiers
+	\item Module Achat/Location
+	\item Module Facturation
+	\item Gestion du stock
+\end{itemize}
 
-\subsection{Compilation}
-	Pour simplifier le processus, j'ai fais un Makefile qui automatise le processus.
-	il peut être remplaçé par :\\
-		\texttt{\$ cp src\/*.tex tmp\/}\\
-		\texttt{\$ cd tmp\/}\\		
-		\texttt{\$ pdflatex main.tex}\\
-		\texttt{\$ mv main.pdf ..\/bin\/}\\
+\section{Module planification}
+	\subsection{Objectif}
+	Ce module est destiné à être utilisé pour planifier les affectations du matériel aux chantiers, optimiser la gestion du parc matétériel (disponibilité et coûts) 
+	et planifier les maintenances préventives.
+	Finalement, à partir des données collectées lors des maintenances correctives, lors de la non disponibilité d'une machine (impliquant une location), ... l'outil génère des 
+	statistiques et peut ainsi suggérer à l'utilisateur des achats, un réajustement du stocks, ...
+	Il connserve un historique de données qu'il peut analyser afin d'optimiser e processus de planification.\\ 
 
-\section{Quelques exemples en latex}
-\subsection{formattage de texte}
+	\subsection{Interface}
+	L'interface offre une visualisation des données et des opérations ergonomique et intuitive.\\ 
 
-	\textbf{gras}\\
-	\textit{italique}\\
-	\emph{emphatique}\\
-	\texttt{chasse fixe}\\
+\section {suivi de chantier}
 
-\subsection{Les listes}
-		
-	\begin{itemize}
-	\item un item
-	\item un deuxième item
-		\subitem un sous item
-	\item un troisème item
-	\end{itemize}
+Ce module est principalement destiné à être utilisé directement sur le chantier par les chefs de chantiers utilisant des PDAs.
+Les principales contraintes auxquelles est soumis ce module sont : 
+une grande lisibilité des informations sur des appareils de taille réduite, une utilisation simplifiée par des écrans tactiles souvent présents sur les appareils mobiles
+
+	\subsection {Objectif}
+	Le suivi matériel consiste en la visualisation en temps réel du matériel présent sur site. 
+	Ce package sera principalement utilisé par les chefs de chantiers afin d'être en mesure d'effectuer la plannification des travaux de la journée.
+	De plus, les responsables pourront effectuer une demande de prolongation en cas retard ou éventuellement signaler une panne.
+
+	\subsection {Interface}
+	Ce module se présentera dans l'application finale sous la forme d'un tableau permettant de visualiser l'état du matériel présent sur le chantier. 
+	Pour chacune des machines, l'utilisateur pourra demander une prolongation du contrat avec la DM, signaler une panne.
+
+\section{Module Achat/Location}
+Le service achat et location travaillant en étroite collaboration, un seul module assure la réalisation de leurs tâches respectives. 
+Les membres du service Achat dispose de fiches fournisseurs décrivant les partenaires privilégiés de GSTP. 
+Ils peuvent à tout moment éditer une commande de matériel ou de pièces de rechanges. 
+Notons que du matériel peut également être loué à nos fournisseurs (lors d’une carence). 
+D’autre part les divers achats doivent être réalisés en fonction de ce qui a pu être planifié dans le module planification. 
+Les magasiniers présents sur chacun des sous-sites peuvent également émettre des demandes. 
+En effet, il se peut que les outils d’aide à la décision mise en place préconisent un réajustement des stocks pour un type de pièces spécifique.\\
+En ce qui concerne la location, les ressources du service disposent d’informations précises sur les machines dont GSTP est propriétaire. 
+Ainsi, via les informations agrégées par le module planification : les diverses maintenances planifiées ou utilisation prévues des machines par nos chantiers ; le matériel disponible à la location est parfaitement connu. 
+D’autre part, lors d’une demande émanant d’une entreprise externe, un devis peut-être édité. 
+Les factures sont quant à elles éditables via le module de facturation. 
+Enfin, lors de la location d’une machine, la durée et le client doivent être indiqué dans un fiche location.
+
+\section {Module Facturation}
+
+	\subsection {Objectif}
+	Le but de ce module est de pouvoir facturer les chantiers pour les matériels utilisés. 
+	Il peut être utilisé directement sur site afin de visualiser le matériel commandé ou au siège afin de créer les factures de demande de matériel des différents chantiers (éventuellement externes).
+
+	\subsection {Interface}
+	L'interface de ce module pourra varier en fonction du poste de l'utilisateur : 
+	un ouvrier/chef de chantier pourra uniquement visualiser les facture afin de vérifier les dates de commande, 
+	le type et la quantité de matériel demandé sur le chantier...) tandis qu'un comptable du siège pourra créer et éditer les factures présentes afin de facturer les différents chantiers en fonction du matériel requis.
+
+\section{Gestion des Stock}
+	\subsection{Objectif}
+	Le module stock est destiné à être utilisé pour gérer en temps réel la quantité et le mouvement d'un nombre relativement grand d'articles en stock ou à stocker. 
+	L'utilisateur est capable bien sur d'exécuter des commandes basiques pour saisir et documenter les stocks en gérant la réception, la sortie, les prélèvements de stocks et le conditionnement.
+	En outre ce package permet à l'utilisateur d'optimiser le flux des biens et d'améliorer la rotation de stocks en analysant les historiques des données.\\  
+
+	\subsection{Interface}
+	Le module permet de visualiser les mouvements, la quantité restante...de stocks, d'exporter en plusieurs formats.\\
+	Le module doit être capable de s'intégrer avec les autres packages pour échanger les données et il doit être aussi facile à utiliser en raison du diversité du niveau de connaissance informatique des utilisateurs.
