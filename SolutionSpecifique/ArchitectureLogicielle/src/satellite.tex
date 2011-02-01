@@ -1,33 +1,24 @@
-\section{Prise en main de latex}
-\subsection{Installation}
-	\begin{description}
-		\item[Linux]~\\
-			\texttt{sudo aptitude install texlive-full}
-		\item[Windows]~\\
-			\href{http://mirror.ctan.org/systems/texlive/tlnet/install-tl.zip}{lien}
-	\end{description}
+\section{Base de données}
+    La base de données devras être répartie et compétitive.
+    Notre choix s'est porté sur la base de donnée Oracle.
 
-\subsection{Compilation}
-	Pour simplifier le processus, j'ai fais un Makefile qui automatise le processus.
-	il peut être remplaçé par :\\
-		\texttt{\$ cp src\/*.tex tmp\/}\\
-		\texttt{\$ cd tmp\/}\\		
-		\texttt{\$ pdflatex main.tex}\\
-		\texttt{\$ mv main.pdf ..\/bin\/}\\
+\section{OSs}
+    \subsection{Serveurs}
+        Le système d'exploitation des serveurs sera de type UNIX.
+        Le choix se portera sur debian pour sa facilité d'utilisation et de mainteance, ou suivant la préférence du service informatique déjà en place, un autre système Unix pourras être employé.
+    \subsection{Postes clients}
+        Le système d'exploitation des postes clients est sans importance etant donné que l'application métier sera portable.
+        En effet, elle sera accessible soit à l'aide d'une application web, soit à l'aide d'un client local multi-plateforme développé avec le framework Qt.
 
-\section{Quelques exemples en latex}
-\subsection{formattage de texte}
+        Le choix par défaut du système d'exploitation des postes clients sera à faire avec les clients.
+        Nous conseillons l'utilisation de Ubuntu Linux pour des raisons de sécurité et de facilité d'utilisation.
 
-	\textbf{gras}\\
-	\textit{italique}\\
-	\emph{emphatique}\\
-	\texttt{chasse fixe}\\
+        Concernant les postes clients, certaines limitations sont tout de même à garder en tête.
+        Le système devras pouvoir se connecter au réseaux VPN.
+        La pluspart des smartphone en soit capable, mais ce sera un paramêtre déterminant dans le choix du produit finale.
+        (Pour exemple, la pluspart des smartphone basé sur Android, iOS ou Blackberry OS sont capable de se connecter au réseau VPN.)
 
-\subsection{Les listes}
-		
-	\begin{itemize}
-	\item un item
-	\item un deuxième item
-		\subitem un sous item
-	\item un troisème item
-	\end{itemize}
+        Suivant la politique de sécurité de l'entreprise, nous pouvons envisager deux solutions.
+        Si, parmis les employé, certains ont déà un poste mobile (téléphone ou laptop), il peut être enviseageable de ne pas en racheter un en remplacement. Cependant, cela peut être source de fuite d'information, si des appareils capable de se connecter à la base de données se trouve en dehors de l'enceinte de l'entreprise.
+        Il peut donc être envisagé de ne pas permettre ni au smartphone, ni au laptop de sortir de l'enceinte des chantiers ou des locaux de l'entreprise.
+        Cette décision sera à prendre avec l'accord du client.
