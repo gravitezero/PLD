@@ -1,17 +1,29 @@
-\documentclass[a4paper,11pt]{report} 
+\documentclass[a4paper,11pt]{article}
 \input{nation}
 
-\title{Solution spécifique}
+\title{Expressions des besoins}
 \author{H4212\\Etienne \textsc{Brodu}, Chafik \textsc{Bachetene}, Adrien \textsc{Brochot},\\Johann \textsc{Chazelle}, Naby Daouda \textsc{Diakite}, Baptiste \textsc{Lecornu}, Thanh \textsc{Phan Duc}}
-\lhead{Solution spécifique}
+\lhead{Rapport d'expression des besoins}
+\rhead{}
 \cfoot{\thepage\ de \pageref{LastPage}}
 
 \begin{document}
 \maketitle
 \newpage
 
-\tableofcontents 
+\tableofcontents
+\newpage
 
-\input{satellite}
+\part{Nouvelle organisation}
+    \input{NouvelleOrganisation/satellite}
+    
+\part{Architecture technique}
+	\input{ArchitectureTechnique/satellite}
+
+\part{Architecture logicielle}
+    \input{ArchitectureLogicielle/satellite}
+
+\part{Architecture applicative}
+    \input{ArchitectureApplicative/satellite}
 
 \end{document}
