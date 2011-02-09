@@ -1,34 +1,55 @@
-\section{Présentation}
-L’un des axes de progrès défini lors de l’expression des besoins consiste en une informatisation conséquente du système. L’objet du présent document est ainsi de définir l’architecture applicative mise en place. Celle-ci s’appuie sur l’architecture technique détaillée dans son livrable spécifique.
-Nous choisissons de mettre en place une application centralisée. GSTP peut opter pour une application Web ou locale. La deuxième solution impliquant un déploiement conséquent optimiserait l’ergonomie et limiterait durée des différents traitements. Ainsi, via une connexion à un réseau VPN dédié à l’entreprise, l’utilisateur accèderait à différents modules en fonction de son statut (chef de chantier, responsable location, …).
+\section{Architecture applicative}
+        L’un des axes de progrès défini lors de l’expression des besoins consiste en une informatisation conséquente du système. L’objet du présent document est ainsi de définir l’architecture applicative mise en place. Celle-ci s’appuie sur l’architecture technique détaillée dans son livrable spécifique.
+Nous choisissons de mettre en place une application centralisée. GSTP peut opter pour une application Web ou locale. La deuxième solution impliquant un déploiement conséquent optimiserait l’ergonomie et limiterait la durée des différents traitements. Ainsi, via une connexion à un réseau VPN dédié à l’entreprise, l’utilisateur accèderait à différents modules en fonction de son statut (chef de chantier, responsable location, …).
 L’application est découpée en 5 modules distincts :
 \begin{itemize}
-	\item Module planification
+	\item Module planification/gestion du matériel
 	\item Suivi des chantiers
 	\item Module Achat/Location
 	\item Module Facturation
 	\item Gestion du stock
 \end{itemize}
 
-\section{Module planification}
+\section{Module planification/gestion du matériel}
 	\subsection{Objectif}
-	Ce module est destiné à être utilisé pour planifier les affectations du matériel aux chantiers, optimiser la gestion du parc matétériel (disponibilité et coûts) 
-	et planifier les maintenances préventives.
-	Finalement, à partir des données collectées lors des maintenances correctives, lors de la non disponibilité d'une machine (impliquant une location), ... l'outil génère des 
-	statistiques et peut ainsi suggérer à l'utilisateur des achats, un réajustement du stocks, ...
-	Il connserve un historique de données qu'il peut analyser afin d'optimiser e processus de planification.\\ 
+	Ce module est destiné à être utilisé pour planifier les affectations du matériel aux chantiers, optimiser la gestion du parc matériel (disponibilité et coûts) et planifier les maintenances préventives.
+	A partir des données collectées lors des maintenances correctives, l'exploitation des machines, lors de la non disponibilité d'une machine (impliquant une location), l'outil génère des statistiques et peut ainsi suggérer à l'utilisateur des achats, un réajustement du niveau des stocks.
+	Il conserve un historique de données qu'il peut analyser afin d'optimiser le processus de planification. Les principaux besoins de la direction matériel couvert par ce module sont :
+        Pour la planification des affectations du matériel :
+               \begin{itemize}
+	               \item 
+	               \item 
+	               \item 
+               \end{itemize}
+
+        Pour la gestion du parc matériel :
+               \begin{itemize}
+	               \item 
+	               \item 
+	               \item 
+	               \item 
+	               \item 
+	               \item 
+               \end{itemize}
+
+        Pour la planification de la maintenanc :
+               \begin{itemize}
+	               \item 
+	               \item 
+	               \item 
+               \end{itemize}
+
 
 	\subsection{Interface}
 	L'interface offre une visualisation des données et des opérations ergonomique et intuitive.\\ 
 
 \section {suivi de chantier}
-
-Ce module est principalement destiné à être utilisé directement sur le chantier par les chefs de chantiers utilisant des PDAs.
+	\subsection {Objectif}
+	Ce module est principalement destiné à être utilisé directement sur le chantier par les chefs de chantiers utilisant des PDAs.
 Les principales contraintes auxquelles est soumis ce module sont : 
 une grande lisibilité des informations sur des appareils de taille réduite, une utilisation simplifiée par des écrans tactiles souvent présents sur les appareils mobiles
 
-	\subsection {Objectif}
-	Le suivi matériel consiste en la visualisation en temps réel du matériel présent sur site. 
+        Le suivi matériel consiste en la visualisation en temps réel du matériel présent sur site. 
 	Ce package sera principalement utilisé par les chefs de chantiers afin d'être en mesure d'effectuer la plannification des travaux de la journée.
 	De plus, les responsables pourront effectuer une demande de prolongation en cas retard ou éventuellement signaler une panne.
 
