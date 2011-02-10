@@ -1,0 +1,33 @@
+\section{Prise en main de latex}
+\subsection{Installation}
+	\begin{description}
+		\item[Linux]~\\
+			\texttt{sudo aptitude install texlive-full}
+		\item[Windows]~\\
+			\href{http://mirror.ctan.org/systems/texlive/tlnet/install-tl.zip}{lien}
+	\end{description}
+
+\subsection{Compilation}
+	Pour simplifier le processus, j'ai fais un Makefile qui automatise le processus.
+	il peut être remplaçé par :\\
+		\texttt{\$ cp src\/*.tex tmp\/}\\
+		\texttt{\$ cd tmp\/}\\		
+		\texttt{\$ pdflatex main.tex}\\
+		\texttt{\$ mv main.pdf ..\/bin\/}\\
+
+\section{Quelques exemples en latex}
+\subsection{formattage de texte}
+
+	\textbf{gras}\\
+	\textit{italique}\\
+	\emph{emphatique}\\
+	\texttt{chasse fixe}\\
+
+\subsection{Les listes}
+		
+	\begin{itemize}
+	\item un item
+	\item un deuxième item
+		\subitem un sous item
+	\item un troisème item
+	\end{itemize}

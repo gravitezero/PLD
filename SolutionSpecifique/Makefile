@@ -7,7 +7,7 @@ PDF_BASE_NAME = Expression\ des\ Besoins
 
 all:
 	mkdir -p $(TMP) ; \
-	for i in AnalyseExistant NormesBench Cible ThemesProgres ; do \
+	for i in ArchitectureTechnique ArchitectureLogicielle ArchitectureApplicative NouvelleOrganisation; do \
 	mkdir -p $(TMP)/$$i ; \
 	cp $$i/$(SRC)/* $(TMP)/$$i/ ; \
 	cp -r $$i/$(SRC)/$(IMG)/ $(TMP)/ ; \
