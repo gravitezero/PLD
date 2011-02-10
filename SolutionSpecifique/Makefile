@@ -12,6 +12,7 @@ all:
 	cp $$i/$(SRC)/* $(TMP)/$$i/ ; \
 	cp -r $$i/$(SRC)/$(IMG)/ $(TMP)/ ; \
 	done ; \
+	cp MCT-MOT/*.pdf $(TMP) ; \
 	cp -r $(SRC)/* $(TMP)/ ; \
 	cd $(TMP) ; \
 	pdflatex $(TEX_BASE_NAME).tex ; \
