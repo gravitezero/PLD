@@ -5,7 +5,7 @@
     Comme les différents sites ne seront pas proches géographiquement, il faudra mettre en place un réseau privé virtuel entre les différents sites, et avec les clients mobiles (smartphone et site chantier).
 
     Les différents sites secondaires et le siège bénéficieront d'un accès câblé à l'internet, il n'y aura donc aucune difficulté à mettre en place un réseau privé virtuel.
-    En revanche pour les chantiers, l'idéal serait de profiter d'un accès câblé à l'internet, mais ce ne sera pas toujours possible. On peut penser alors à un accès par satellite, ou par réseaux 3G/EDGE. Pour ces dernier cas, il serait préférable de mettre en place, comme pour les sites, une base de donnée locale afin de récolter les informations et de les mettre à jour en temps réel sur le site, puis dans un second temps de les porter ensuite vers le serveur global, minimisant ainsi la quantité de données à envoyer.
+    En revanche pour les chantiers, l'idéal serait de profiter d'un accès câblé à l'internet, mais ce ne sera pas toujours possible. On peut penser alors à un accès par satellite, ou par réseaux 3G/EDGE. Pour ces dernier cas, il serait préférable de mettre en place, comme pour les sites, une base de donnée locale afin de récolter les informations et de les mettre à jour en temps réel sur le site, puis dans un second temps de les porter vers le serveur global, minimisant ainsi la quantité de données à envoyer.
 
     Le siège accueillera donc le serveur principal de données, ainsi qu'un serveur de sauvegarde pour éviter toute perte, ce dernier permettrait également de redémarrer rapidement la production en cas de panne. Les 4 nouveaux sites (sans compter celui du siège) accueilleront également un base de données secondaire, plus petite, permettant uniquement d'enregistrer des modifications en cas d'inaccessibilité au serveur central.
 
@@ -20,33 +20,33 @@
 	\item 2 gros serveur de données.
 	\item 1 serveur de réseau privé virtuel
     \item 1 firewall
-	\item 1 routeur 
+	\item 1 routeur\\
 
 	\item 1 serveur d'application / données par site
 	\item 1 client de réseau privé virtuel par site
     \item 1 firewall par site
-	\item 1 routeur par site
+	\item 1 routeur par site\\
 
 	\item 1 serveur d'application / données mobile par chantier
 	\item 1 client de réseau privé virtuel par chanter
 	\item 1 routeur par chantier
     \item 1 firewall par chantier
 	\item 1 borne relais wifi de secours par chantier
-	\item 2 smartphone par chantier
+	\item 2 smartphone par chantier\\
 
 	\item 1 poste client par utilisateur
 \end{itemize}
-
+~\\
 %Montrer une petite distinction sans pour autant créer une nouvelle sous partie
     Notre solution de communication se basera principalement sur l'utilisation d'un VPN.
 
-    Chaque site accueilera un serveur d'application, ce serveur aura à sa charge un serveur VPN fournissant à tout les clients un accès de type intranet identique sur tous les sites.
+    Chaque site accueillera un serveur d'application, ce serveur aura à sa charge un serveur VPN fournissant à tout les clients un accès de type intranet identique sur tous les sites.
     Les terminaux mobiles auront également accès à ce VPN par le biais de connexion mobile, ou par wifi.
 
     Tous les clients se connecteront donc à ces serveurs à l'aide de clients VPN et profiterons ainsi d'un accès sécurisé à toutes les données nécessaires.
 
     Pour ce qui est du réseau, l'installation sera principalement impacté par la disposition des locaux.
-    Dans tout les cas, on ne pourra se passer, par site, d'un firewall et d'un routeur, suivi d'un ou plusieurs switch permettant de distribuer le reseau dans chacune des infrastructures.
+    Dans tout les cas, on ne pourra se passer, par site, d'un firewall et d'un routeur, suivi d'un ou plusieurs switch permettant de distribuer le réseau dans chacune des infrastructures.
 
     Étant donné que la plupart des employé auront une grande mobilité, il peut être judicieux de les équiper uniquement de postes clients portables, ce qui sera fait d'ailleurs sur les chantiers.
 
@@ -63,8 +63,7 @@
             Afin de connecter ce réseau local à l'extérieur, l'accès internet sera fourni par l'intermédiaire d'un firewall. Ce firewall sera de qualité professionnel, et sera aussi important que le serveur lui-même. Son prix est estimé à 1000€.
         
         \subsubsection{Postes clients}
-            TODO compter le nombre de gens
-%Voir mon schéma
+            Il faut compter un poste clients par utilisateur. On compte 71 personnes sur le site central, donc 71 postes clients seront mis en place. Chaque service dispose d'une ou plusieurs imprimantes. 16 imprimantes seront mis en place (se référer au schéma pour la répartition exacte des postes et des imprimantes).
 
     \subsection{Sites secondaires}
 
@@ -74,10 +73,10 @@
         \subsubsection{Réseau : Firewall, Routeur et switch}
             L'infrastructure sera sensiblement la même que sur le site principale, des détails pourront être apportés ultérieurement.
 
-   \subsection{Chantier}
+    \subsection{Chantier}
+        L'architecture technique des chantier sera sensiblement la même que pour les sites secondaires.
+        A la différence que chaque chantier pourras être équipé d'une borne d'accès wifi afin de facilité la connexion des smartphone à l'architecture applicative.
 
-% Quoi ICI?
-%Sur chaque chantier il y a un PC portable et des clients légers à gérer.. (voir le schéma).. Je te laisse détailler
 
 
 
