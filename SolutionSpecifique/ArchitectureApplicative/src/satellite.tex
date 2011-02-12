@@ -1,6 +1,6 @@
 \section{Architecture applicative}
         L’un des axes de progrès défini lors de l’expression des besoins consiste en une informatisation conséquente du système. L’objet du présent document est ainsi de définir l’architecture applicative mise en place. Celle-ci s’appuie sur l’architecture technique détaillée dans son livrable spécifique.
-Nous choisissons de mettre en place une application centralisée. GSTP peut opter pour une application Web ou locale. La deuxième solution impliquant un déploiement conséquent optimiserait l’ergonomie et limiterait la durée des différents traitements. Ainsi, via une connexion à un réseau VPN dédié à l’entreprise, l’utilisateur accèderait à différents modules en fonction de son statut (chef de chantier, responsable location, …).
+Nous choisissons de mettre en place une application centralisée. GSTP peut opter pour une application Web ou locale. La deuxième solution impliquant un déploiement conséquent, optimiserait l’ergonomie; quant à la mise en place d'une application web cela réduira considérablement les opérations de maintenance, ce choix facilitera également le déploiement sur de nouveaux sites. De nos jours, il existe des applications web offrant une ergonomie semblable à celle d'application de bureau, et étant donné l'activité de GSTP on imagine bien que les montées en charge resteront largement gérables. Ainsi, via une connexion à un réseau VPN dédié à l’entreprise, l’utilisateur accèderait à différents modules en fonction de son statut (chef de chantier, responsable location, …). Nous conseillerons plus la seconde solution à GSTP à cause des raisons évoqués.
 L’application est découpée en 5 modules distincts :
 \begin{itemize}
 	\item Application planification/gestion du matériel
@@ -9,6 +9,10 @@ L’application est découpée en 5 modules distincts :
 	\item Application Facturation
 	\item Application Gestion du stock
 \end{itemize}
+
+\section{Portail web avec intranet}
+	Avant tout, il semble évident de revoir les moyens de communication au sein de GSTP. Pour cela, on proposera de mettre en place un Intranet. Cet intranet sera la base de l'architecture applicative et ce pour plusieurs raisons. L'intranet est un puissant moyen de communication au sein d'une organisation. Il aide à trouver et à visualiser rapidement des informations dans des documents électroniques et des applications. Via une interface Web simple d'utilisation et ergonomique, les employés de GSTP pourront accéder aux données de la base de données centralisant toutes les informations pertinentes concernant l'entreprise. De plus, elle servira de plateforme pour développer et déployer les applications. Les accès aux ressources et applications seront gérés par type d'utilisateurs, des droits seront accordés à chaque groupe d'utilisateur. L'intranet possède une architecture qui repose sur plusieurs types de composants comme des serveurs, des routeurs, firewall.
+	Un portail web sera mis en place. Le réseau sera raisonnablement sécurisé et ne sera accessible que par le siège, les sites secondondaires et les chantiers. Le portail web sur lequel repose l'intranet offre un large éventail de ressources et de services comme la personnalisation de l'espace de travail de chacun et la messagerie électronique. Ainsi, chaque employé de GSTP possèdera un compte mail et pourra communiquer avec quiconque de l'entreprise via Internet/Intranet, d'où le recours à un webmail.
 
 \section{Application planification/gestion du matériel}
 	\subsection{Objectif}
