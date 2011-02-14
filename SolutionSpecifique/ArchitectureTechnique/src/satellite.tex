@@ -1,6 +1,6 @@
 \section{Architecture technique}
 
-    Dans les améliorations technologique à apporter à la direction matériel, il nous faut, non seulement un moyen de gérer le matériel, mais aussi un moyen de communiquer et d'accéder à cette gestion sur les chantiers.
+    Dans les améliorations technologique à apporter à la direction matériel, il nous faut non seulement un moyen de gérer le matériel, mais aussi un moyen de communiquer et d'accéder à cette gestion sur les chantiers.
 
     Comme les différents sites ne seront pas proches géographiquement, il faudra mettre en place un réseau privé virtuel entre les différents sites, et avec les clients mobiles (smartphone et site chantier).
 
@@ -34,7 +34,7 @@
 	\item 1 borne relais wifi de secours par chantier
 	\item 2 smartphone par chantier\\
 
-	\item 1 poste client par utilisateur
+	\item 1 poste client par utilisateur ayant besoin d'un ordinateur pour réaliser son travail
 \end{itemize}
 
 \includegraphics[width=0.9\textwidth]{img/schema-gstp.pdf}
@@ -61,11 +61,11 @@
             Ce serveur sera le cœur de toutes l'installation, autrement dit il sera le plus critique, il est important qu'il soit de la meilleur qualité possible. Il permettras l'exécution du serveur VPN ainsi que de l'application.
 
         \subsubsection{Réseau : Firewall, Routeur et switch}
-            Afin de connecter les postes clients aux serveur, l'installation d'un réseau local est indispensable. Cette connexion se fera par l'intermédiaire d'un switch sur lequel le serveur et tous les postes clients se connecteront. Un routeur en amont permettra notamment la distribution d'adresse IP. Une estimation du prix du routeur et du switch nous a permis de chiffrer chacun d'eux à 1000€.
+            Afin de connecter les postes clients au serveur, l'installation d'un réseau local est indispensable. Cette connexion se fera par l'intermédiaire d'un switch sur lequel le serveur et tous les postes clients se connecteront. Un routeur en amont permettra notamment la distribution d'adresse IP. Une estimation du prix du routeur et du switch nous a permis de chiffrer chacun d'eux à 1000€.
             Afin de connecter ce réseau local à l'extérieur, l'accès internet sera fourni par l'intermédiaire d'un firewall. Ce firewall sera de qualité professionnel, et sera aussi important que le serveur lui-même. Son prix est estimé à 1000€.
         
         \subsubsection{Postes clients}
-            Il faut compter un poste clients par utilisateur. On compte 71 personnes sur le site central, donc 71 postes clients seront mis en place. Chaque service dispose d'une ou plusieurs imprimantes. 16 imprimantes seront mis en place (se référer au schéma pour la répartition exacte des postes et des imprimantes).
+            Il faut compter un poste client par utilisateur ayant besoin d'un ordinateur pour réaliser son travail. On compte 71 personnes sur le site central, donc 71 postes clients seront mis en place. Chaque service dispose d'une ou plusieurs imprimantes. 16 imprimantes seront mis en place (se référer au schéma pour la répartition exacte des postes et des imprimantes).
 
     \subsection{Sites secondaires}
 
