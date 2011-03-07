@@ -17,9 +17,10 @@ De plus, le découpage de GSTP en sites régionaux permettra à la société de 
 
 
 \section{Plan de mise en oeuvre}
-    \begin{itemize}
-        \paragraph Phase 1
-			\item Elaboration de la solution (9 mois)
+    
+        \paragraph{Phase 1}
+        \begin{itemize}
+			\item Élaboration de la solution (9 mois)
 				\subitem Etude Détaillée (1 mois)
 				\subitem Développement de l’application spécifique (7 mois)
 				\subitem Test (1 mois)
@@ -28,202 +29,210 @@ De plus, le découpage de GSTP en sites régionaux permettra à la société de 
 				\subitem Affectation des nouvelles ressources
 				\subitem Achat/Affectation du matériel et des pièces de rechange
 				\subitem Informatisation progressive des sites et chantiers
+	    \end{itemize}
 
-		\paragraph Phase 2
+		\paragraph{Phase 2}
+		\begin{itemize} 
 			\item Déploiement architecture technique (2 mois)
 				\subitem Achat des nouveaux matériels informatiques
 				\subitem Installation du réseau
 				\subitem Déploiement de l'application (sites et chantiers)
+		\end{itemize}
 
-		\paragraph Phase 3
+		\paragraph{Phase 3}
+		\begin{itemize} 
 			\item Accompagnement au changement (2 mois)
 				\subitem Formation
+		\end{itemize}
 
-		\paragraph Phase 4 
+		\paragraph{Phase 4}
+		\begin{itemize} 
 			\item Déploiement (1 mois)
 				\subitem Migration des données existantes
 				\subitem Qualification
 				\subitem Mise en production
+		\end{itemize}
 
-		\paragraph Phase 5
+		\paragraph{Phase 5}
+		\begin{itemize} 
 			\item Support et maintenance (contractuel  2 ans)
 				\subitem Support téléphonique
 				\subitem Suivi et Maintenance
+		\end{itemize}
 
-            
+    \begin{itemize}        
         \item Total (parallélisme)
     \end{itemize}
 
-\section{Evaluation des coûts}
+\section{Évaluation des coûts}
 
-    \subsection{Evaluation financière}
+    \subsection{Évaluation financière}
+    
+        L'évaluation financière est détaillé dans l'annexe Évaluation des scénarios, ci-dessous un tableau récapitulatif.
+        (Tous les prix sont indiqué HT)
+    
+        \subsubsection{Site central}
+            \begin{tabular*}{\textwidth}{ l @{\extracolsep{\fill}} r }
+	            serveur d'application principal   & 8 000€ \\ 
+	            serveur de données principal      & 8 000€ $\times$ 2 \\ 
+	            serveur de réseau privé virtuel   & 0€ (solution logicielle gratuite)\\ 
+                firewall                          & 800€ \\ 
+	            routeur                           & 500€ \\ 
+	            switch                            & 200€ \\ 
+	            poste client                      & 300€ $\times$ 71\\
+	            imprimante                        & 200€ $\times$ 16\\ \hline
+	            Sous total                        & 50 000€
+            \end{tabular*}
+            
+        \subsubsection{Site générique}
+            \begin{tabular*}{\textwidth}{ l @{\extracolsep{\fill}} r }
+	            serveur d'application / données par site  & 2 000€ \\ 
+	            client de réseau privé virtuel par site   & 0€ (solution logicielle gratuite)\\ 
+                firewall par site                         & 800€ \\ 
+	            routeur par site                          & 500€ \\ 
+	            switch                                    & 200€ \\ 
+	            postes clients                            & 300€ $\times$ 3 \\
+	            imprimantes                               & 200€ $\times$ 3 \\ \hline
+	            Sous total par site                       & 5 000€
+            \end{tabular*}
 
--------------------------------------------------------------------------------------------------------------------------> (ETIENNE)
-
-\section{Liste du matériel nécessaire}
-    \subsection{Site central}
-        \begin{tabular*}{\textwidth}{ l @{\extracolsep{\fill}} r }
-1 gros serveur d'application & 10 000€ \\
-2 gros serveur de données & 10 000€ $\times$ 2 \\
-1 serveur de réseau privé virtuel & 0€ (solution logicielle gratuite)\\
-            1 firewall & 1 000€ \\
-1 routeur & 1 000€ \\
-1 switch & 1 000€ \\
-1 poste client / utilisateur & 1 000€ $\times$ 71\\
-1 imprimante / ~ 10 utilisateurs & 500€ $\times$ 16 utilisateurs\\ \hline
-Sous total & 112 000€
-        \end{tabular*}
-        
-    \subsection{Site générique}
-        \begin{tabular*}{\textwidth}{ l @{\extracolsep{\fill}} r }
-1 serveur d'application / données par site & 5 000€ \\
-1 client de réseau privé virtuel par site & 0€ (solution logicielle gratuite)\\
-            1 firewall par site & 1 000€ \\
-1 routeur par site & 1 000€ \\
-1 switch & 1 000€ \\
-1 poste client / utilisateur & 1 000€ $\times$ 3 \\
-1 imprimante / ~ 10 utilisateurs & 5 00€ $\times$ 3 \\ \hline
-Sous total & 12 500€
-        \end{tabular*}
-
-    \subsection{Chantiers}
-        \begin{tabular*}{\textwidth}{ l @{\extracolsep{\fill}} r }
-1 serveur d'application / données mobile par chantier & 5000€ \\
-1 client de réseau privé virtuel par chanter & 0€ (solution logicielle gratuite)\\
-1 firewall par chantier & 1 000€ \\
-1 routeur par chantier & 1 000€ \\
-1 switch & 1 000€ \\
-1 borne relais wifi de secours par chantier & 500€ \\
-2 smartphone par chantier & 2 $\times$ 500€ + 2 $\times$ 100€ \/ mois\\
-1 poste client / utilisateur & 1000€ $\times$ 1 \\
-1 imprimante / ~ 10 utilisateurs & 500€ $\times$ 1 \\ \hline
-Sous total & 11 000€ + 200€ \/mois
-        \end{tabular*}
-
+        \subsubsection{Chantiers}
+            \begin{tabular*}{\textwidth}{ l @{\extracolsep{\fill}} r }
+	            serveur d'application / données mobile par chantier     & 2000€ \\ 
+	            client de réseau privé virtuel par chanter              & 0€ (solution logicielle gratuite)\\ 
+	            firewall par chantier                                   & 800€ \\ 
+	            routeur par chantier                                    & 500€ \\ 
+	            switch                                                  & 200€ \\ 
+	            borne relais wifi de secours par chantier               & 100€ \\ 
+	            smartphone par chantier                                 & 2 $\times$ 70€ + 2 $\times$ 30€ \/ mois\\ 
+	            poste client                                            & 500€ $\times$ 1 \\
+	            imprimante                                              & 200€ $\times$ 1 \\ \hline
+	            Sous total par chantier                                 & 4 440€ + 600€ \/mois
+            \end{tabular*}
 
 -------------------------------------------------------------------------------------------------------------------------> (ADRIEN)
 
 \section{Chiffrage de l'investissement nécessaire au déploiement des sites secondaires}
 
-Nous avons évalué la superficie de terrain nécessaire à chaque site secondaire entre 1500 et 2500 m². Le prix d'achat d'un tel terrain pour chaque site étant à priori trop élevé pour GSTP, nous envisageons de louer ces terrains, pour un prix moyen de 30.000€ par an.
+    Nous avons évalué la superficie de terrain nécessaire à chaque site secondaire entre 1500 et 2500 m². Le prix d'achat d'un tel terrain pour chaque site étant à priori trop élevé pour GSTP, nous envisageons de louer ces terrains, pour un prix moyen de 30.000€ par an.
 
-\subsection{immobilier}
+    \subsection{immobilier}
 
-Concernant le matériel présent sur chaque site, il sera le même pour tous : 
-\begin{description}
-	\item[bureaux : ] Afin d'équiper les sites, au moins 8 à 10 bureaux devront être installés dans chaque site. Le prix total par site pour cet équipement s'élèvera donc à 3000€ par site (estimation pour l'installation de 10 bureaux)
-	\item[Autres coût :]  On estime à 1500€ les coûts d'équipement secondaires de chaque site (fournitures de bureau, autres mobiliers...)
+        Concernant le matériel présent sur chaque site, il sera le même pour tous : 
+        \begin{description}
+	        \item[bureaux : ] Afin d'équiper les sites, au moins 8 à 10 bureaux devront être installés dans chaque site. Le prix total par site pour cet équipement s'élèvera donc à 3000€ par site (estimation pour l'installation de 10 bureaux)
+	        \item[Autres coût :]  On estime à 1500€ les coûts d'équipement secondaires de chaque site (fournitures de bureau, autres mobiliers...)
+        \end{description}
 
-\subsection{Frais Logistiques}
-Les sites secondaires étant répartis dans toute la France, leurs distance avec les différents chantiers qu'ils doivent alimenter sera inférieure à 200km.
+        \subsection{Frais Logistiques}
+        Les sites secondaires étant répartis dans toute la France, leurs distance avec les différents chantiers qu'ils doivent alimenter sera inférieure à 200km.
 
-La mise en place de ces sites secondaires engendrera directement des couts logistiques liés aux flux physiques (matériels, matières, transports, emballages, stocks..), nous estimons ces coûts à 20 000€.
+        La mise en place de ces sites secondaires engendrera directement des couts logistiques liés aux flux physiques (matériels, matières, transports, emballages, stocks..), nous estimons ces coûts à 20 000€.
 
-La somme totale des dépenses liées à la mise en place de ces sites est de 32 000€ (plus 120 000€/an).
+        La somme totale des dépenses liées à la mise en place de ces sites est de 32 000€ (plus 120 000€/an).
 
+        -------------------------------------------------------------------------------------------------------------------------> (THANH)
 
--------------------------------------------------------------------------------------------------------------------------> (THANH)
+        \subsubsection{Développement Spécifique}
+        \paragraph{Objectif}
 
-\subsubsection{Développement Spécifique}
-\subsubsubsection{Objectif}
+        Dans le cadre du projet GSTP, il faut maintenant évaluer les couts de développement spécifiques afin d'aider les clients à choisir une solution.
 
-Dans le cadre du projet GSTP, il faut maintenant évaluer les couts de développement spécifiques afin d'aider les clients à choisir une solution.
+        \paragraph{Méthode}
 
-\subsubsubsection{Méthode}
+        Étant donné que nous optons seulement pour le ``logiciels libres/open sources", le calcul ne sera basé que sur le charge de travail.\\
 
-Étant donné que nous optons seulement pour le ``logiciels libres/open sources", le calcul ne sera basé que sur le charge de travail.\\
+        On a décidé de le développement ne se sera effectué que par nos équipes sans rien externaliser.
 
-On a décidé de le développement ne se sera effectué que par nos équipes sans rien externaliser.
+        L’unité de calcul sera le ``jour-etude-homme'' (JEH) qui nous permettra également de rester cohérent dans le contexte du projet et de rendre plus flexible la répartition du travail. "Un jour-etude-homme" correspondra à 400 €.
 
-L’unité de calcul sera le ``jour-etude-homme'' (JEH) qui nous permettra également de rester cohérent dans le contexte du projet et de rendre plus flexible la répartition du travail. "Un jour-etude-homme" correspondra à 400 €.
+    \subsection{Estimation}
 
-\subsection{Estimation}
+    \subsubsection{Développement}
+    La démarche utilisée pour le développement sera le cycle en V. 
 
-\subsubsection{Développement}
-La démarche utilisée pour le développement sera le cycle en V. 
+    \begin{enumerate}
+    \item \textbf{Elaboration:}\\ Il commencera par l'analyse de besoins, faisabilité et la spécification ensemble. Cette tâche nécessitera  60 jeh. \\
 
-\begin{enumerate}
-\item \textbf{Elaboration:}\\ Il commencera par l'analyse de besoins, faisabilité et la spécification ensemble. Cette tâche nécessitera  60 jeh. \\
+    En suite c'est la phase de spécification détaillée pour chaque module. Nous estimons cette phase en jeh pour chaque module à :
+         - Planification : 20
+         - Suivi de chantiers : 20 
+         - Achat/Location : 20 
+         - Fracturation : 10
+         - Gestion de stocks : 10 
+         - TOTAL : 90.
 
-En suite c'est la phase de spécification détaillée pour chaque module. Nous estimons cette phase en jeh pour chaque module à :
-     - Planification : 20
-     - Suivi de chantiers : 20 
-     - Achat/Location : 20 
-     - Fracturation : 10
-     - Gestion de stocks : 10 
-     - TOTAL : 90.
+    \item \textbf{Construction}\\
+    Une fois la spécification est établie, il faut travailler sur la conception ensemble qui prendra 30jeh. 
 
-\item \textbf{Construction}\\
-Une fois la spécification est établie, il faut travailler sur la conception ensemble qui prendra 30jeh. 
+    \begin{center} 
+        \begin{tabular}{ |c| c| c | c | c |c |}
+        \hline
+	    Module&Conception&Codage&Doc&Teste&Total\\ \hline
+        Planification & 50 & 90 & 15 &35&190\\ \hline
+        Suivi Chantier &35&90&10&25&160 \\ \hline
+        Achat/Location &20&40&5&20&85  \\ \hline
+        Fracturation &25&30&5&15&75\\ \hline
+        Gestion de stock &30&35&5&20&90 \\
+        \hline
+        \end{tabular}
+    \end{center}
 
-\begin{center} 
-    \begin{tabular}{ |c| c| c | c | c |c |}
-    \hline
-	 Module&Conception&Codage&Doc&Teste&Total\\ \hline
-    Planification & 50 & 90 & 15 &35&190\\ \hline
-    Suivi Chantier &35&90&10&25&160 \\ \hline
-    Achat/Location &20&40&5&20&85  \\ \hline
-    Fracturation &25&30&5&15&75\\ \hline
-    Gestion de stock &30&35&5&20&90 \\
-    \hline
-    \end{tabular}
-\end{center}
+    Les test d'intégration nécessiteront 80jeh.
 
-Les test d'intégration nécessiteront 80jeh.
+    Il faut donc 775jeh pour cette phase de construction et validation.
 
-Il faut donc 775jeh pour cette phase de construction et validation.
+    \subsubsection{Déploiement}
 
-\subsubsection{Déploiement}
+    Le déploiement se passera en général relativement vite avec la même équipe de développent. Il prendra environ 60 j*h.
 
-Le déploiement se passera en général relativement vite avec la même équipe de développent. Il prendra environ 60 j*h.
+    Le budget du projet s'élève à 442 000€(1015jeh).
 
-Le budget du projet s'élève à 442 000€(1015jeh).
+    Il faudra 9 mois pour réaliser le projet et environ 6 personnes dans l'équipe dont le chef de projet, il exercera le suivi du projet et participera aux différentes phases de l'étude. Nous avons fait le maximum pour réduire les délais, en supposant que le chef de projet pourra effectuer parallèlement son suivi et ses tâches sur le projet. Le projet sera piloté par notre chef de projet le plus expérimenté.
 
-Il faudra 9 mois pour réaliser le projet et environ 6 personnes dans l'équipe dont le chef de projet, il exercera le suivi du projet et participera aux différentes phases de l'étude. Nous avons fait le maximum pour réduire les délais, en supposant que le chef de projet pourra effectuer parallèlement son suivi et ses tâches sur le projet. Le projet sera piloté par notre chef de projet le plus expérimenté.
+    \subsubsection{Maintenance}
 
-\subsubsection{Maintenance}
+    Nos équipes assureront également la maintenance corrective de l'application durant 2ans, il faudra par la suite mettre en place un nouveau contrat de maintenance qui coutera 24 000€ / an. Ce contrat implique la correction de 10 bogues mineurs et de 2 bogues majeurs au maximum. Les maintenances évolutives engendreront d'autres dépenses. Mais un budget annuel de 24 000€ devrait couvrir les besoins de maintenance de GSTP.
 
-Nos équipes assureront également la maintenance corrective de l'application durant 2ans, il faudra par la suite mettre en place un nouveau contrat de maintenance qui coutera 24 000€ / an. Ce contrat implique la correction de 10 bogues mineurs et de 2 bogues majeurs au maximum. Les maintenances évolutives engendreront d'autres dépenses. Mais un budget annuel de 24 000€ devrait couvrir les besoins de maintenance de GSTP.
+    Sinon GSTP devra peut être embauché un nouvel employé (voir 2) ayant des compétences dans les technologies du projet afin d'assurer la maintenance (évolutive, corrective.). Son salaire sera environ 40000€ \ an.\\
 
-Sinon GSTP devra peut être embauché un nouvel employé (voir 2) ayant des compétences dans les technologies du projet afin d'assurer la maintenance (évolutive, corrective.). Son salaire sera environ 40000€ \ an.\\
+    Le coût total de maintenance est très difficile à calculer à priori. 
+    Par contre, par expérience le coût annuel peut être approximé à  10 \% du coût initial. Mais cela couterait trop cher à GSTP, donc la société mettra
+    en place l'ensemble des actions nécessaires à réduire au maximum la maintenance de cette solution.
 
-Le coût total de maintenance est très difficile à calcule à priori. 
-Par contre, par expérience le coût annuel peut être approximé à  10 \% du coût initial. Mais cela couterait trop cher à GSTP, donc la société mettra
-en place l'ensemble des actions nécessaires à réduire au maximum la maintenance de cette solution.
+    \subsubsection{Formation}
+        La mise en place d'une solution spécifique nécessite une connaissance solide des futurs utilisateurs, il faut concevoir et réaliser l'application afin que les futurs utilisateurs puissent se l'approprier, l'appropriation se fera également grâce aux formations
+          La formation est donc une étape indispensable. Les utilisateurs ciblés sont les administratifs, les responsables et les techniciens. (il n'est pas nécessaire de former les ouvriers).\\
 
-\subsubsection{Formation}
-    La mise en place d'une solution spécifique nécessite une connaissance solide des futurs utilisateurs, il faut concevoir et réaliser l'application afin que les futurs utilisateurs puissent se l'approprier, l'appropriation se fera également grâce aux formations
-      La formation est donc une étape indispensable. Les utilisateurs ciblés sont les administratifs, les responsables et les techniciens. (il n'est pas nécessaire de former les ouvriers).\\
+    Les manuels utilisateur sont créés durant la phase de développement au fur et à mesure.\\
 
-Les manuels utilisateur sont créés durant la phase de développement au fur et à mesure.\\
+    Pour ne pas trop impacter sur le rythme de travail des employés, il y aura environ 15 personnes par groupe de formation sachant qu'il y a 100 personnes à former  environ, il y aura environ 5 formations par groupe soit 35 formations en tout.
+    Nous estimons la journée de formation à 2jeh (2 formateurs de nos équipes). Nous proposons énormément de formations afin que les employés puissent être rapidement opérationnelles et qu'ils s'adaptent vite à leur environnement de travail. Pour certains il s'agira d'un réel changement donc ces formations sont vraiment justifiées.
 
-Pour ne pas trop impacter sur le rythme de travail des employés, il y aura environ 15 personnes par groupe de formation sachant qu'il y a 100 personnes à former  environ, il y aura environ 5 formations par groupe soit 35 formations en tout.
-Nous estimons la journée de formation à 2jeh (2 formateurs de nos équipes). Nous proposons énormément de formations afin que les employés puissent être rapidement opérationnelles et qu'ils s'adaptent vite à leur environnement de travail. Pour certains il s'agira d'un réel changement donc ces formations sont vraiment justifiées.
+    Les dépenses liées aux formations sont de 70 jeh (environ 28 000€).
+     
 
-Les dépenses liées aux formations sont de 70 jeh (environ 28 000€).
- 
+    \end{enumerate}
 
-\end{enumerate}
+    \subsection{Coût total de la solution spécifique}
 
-\subsection{Coût total de la solution spécifique}
+    Le prix total de l'investissement pour la mise en place, la formation et la maintenance pour la solution spécifique est : 783 400€.
+          - Dépenses informatiques : 135 500€
+          - Prix de l'aménagement des sites secondaires : 12 000€
+          - Prix de la logistique nécessaire pour les sites secondaires : 20 000€
+          - Location du terrain pour les sites secondaires : 120 000€
+          - Coût développement spécifique : 442 000€
+          - Formations : 28 000€
+          - Maintenance : 24 000€
 
-Le prix total de l'investissement pour la mise en place, la formation et la maintenance pour la solution spécifique est : 783 400€.
-      - Dépenses informatiques : 135 500€
-      - Prix de l'aménagement des sites secondaires : 12 000€
-      - Prix de la logistique nécessaire pour les sites secondaires : 20 000€
-      - Location du terrain pour les sites secondaires : 120 000€
-      - Coût développement spécifique : 442 000€
-      - Formations : 28 000€
-      - Maintenance : 24 000€
+    En plus il y aura des dépenses annuelles :
+          - Maintenance abonnement? : 2400€
+          - Location du terrain pour les sites secondaires : 120 000€
+          - Maintenance : 24 000€
 
-En plus il y aura des dépenses annuelles :
-      - Maintenance abonnement? : 2400€
-      - Location du terrain pour les sites secondaires : 120 000€
-      - Maintenance : 24 000€
+        \subsection{Délai}
 
-    \subsection{Délai}
-
-          D'après le plan de mise en œuvre, le temps total estimé pour la solution spécifique est de 12 mois en considérant le parallélisme de certaines phases. On va faire en même temps : l'installation des nouveaux entrepôts régionaux et l'acquisition du matériel pour la nouvelle architecture matérielle; les tests, la validation du nouveau système et la formation du personnel.
+              D'après le plan de mise en œuvre, le temps total estimé pour la solution spécifique est de 12 mois en considérant le parallélisme de certaines phases. On va faire en même temps : l'installation des nouveaux entrepôts régionaux et l'acquisition du matériel pour la nouvelle architecture matérielle; les tests, la validation du nouveau système et la formation du personnel.
 
 -------------------------------------------------------------------------------------------------------------------------> (BAPTISTE)
 
@@ -320,4 +329,8 @@ Ce risque est étroitement lié à celui de la maintenance. L'évolutivité de c
 
 \subparagraph{Solutions\\}
 Proposer une solution la plus générique possible. 
+
+\section{Annexes}
+    \subsection{Evaluation Scenarios}
+        \includepdf{res/Tableau_evaluation_scenarios_PLD.pdf}
 
