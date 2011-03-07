@@ -1,6 +1,7 @@
-\section{Architecture applicative}
-        L’un des axes de progrès défini lors de l’expression des besoins consiste en une informatisation conséquente du système. L’objet du présent document est ainsi de définir l’architecture applicative mise en place. Celle-ci s’appuie sur l’architecture technique détaillée dans son livrable spécifique.
-Nous choisissons de mettre en place une application centralisée. GSTP peut opter pour une application Web ou locale. La deuxième solution impliquant un déploiement conséquent optimiserait l’ergonomie et limiterait la durée des différents traitements. Ainsi, via une connexion à un réseau VPN dédié à l’entreprise, l’utilisateur accèderait à différents modules en fonction de son statut (chef de chantier, responsable location, …).
+\section{Description applicative}
+        L’un des axes de progrès défini lors de l’expression des besoins consiste en une informatisation conséquente du système. L’objet du présent document est ainsi de définir l’architecture applicative qui sera mise en place. Celle-ci s’appuie sur l’architecture technique détaillée précédemment.
+
+        Nous choisissons de mettre en place une application centralisée. GSTP peut opter pour une application Web ou locale. La deuxième solution impliquant un déploiement conséquent, même si l'ergonomie serait légèrement meilleur; quant à la mise en place d'une application web cela réduira considérablement les opérations de maintenance, ce choix facilitera également le déploiement sur de nouveaux sites. De nos jours, il existe des applications web offrant une ergonomie semblable à celle d'applications de bureau. Ainsi, via une connexion à un réseau VPN dédié à l’entreprise, l’utilisateur accèderait à différents modules en fonction de son statut (chef de chantier, responsable location, …). Nous conseillerons plus la seconde solution à GSTP à cause des raisons évoqués.
 L’application est découpée en 5 modules distincts :
 \begin{itemize}
 	\item Application planification/gestion du matériel
@@ -10,82 +11,91 @@ L’application est découpée en 5 modules distincts :
 	\item Application Gestion du stock
 \end{itemize}
 
-\section{Application planification/gestion du matériel}
-	\subsection{Objectif}
-	Ce module est destiné à être utilisé pour planifier les affectations du matériel aux chantiers, optimiser la gestion du parc matériel (disponibilité et coûts) et planifier les maintenances.
-	A partir des données collectées lors des maintenances, l'exploitation des machines, lors de la non disponibilité d'une machine (impliquant une location), l'outil génère des statistiques et peut ainsi suggérer à l'utilisateur des achats, un réajustement du niveau des stocks.
-	Il conserve un historique de données qu'il peut analyser afin d'optimiser le processus de planification. Les principaux besoins de la direction matériel couvert par ce module sont :
-        Pour la planification des affectations du matériel :
-               \begin{itemize}
-	               \item Consulter le planning pour vérifier si le matériel est disponible.
-	               \item Affecter un matériel à un chantier s'il est disponible.
-	               \item Annuler/Modifier une affectation.
-               \end{itemize}
+Pour déployer cette architecture applicative nous nous baserons sur un portail web avec intranet, qui est décrit ci-dessous.
 
-        Pour la gestion du parc matériel :
-               \begin{itemize}
-	               \item Signaler la restitution d'un matériel.
-	               \item Signaler l'affectation d'un matériel
-	               \item Signaler le non retour d'un matériel pour la date prévue
-	               \item Signaler la réception d'une livraison
-	               \item Signaler le pointage d'un matériel
-	               \item Consulter le planning de maintenance pour vérifier si un matériel est toujours en maintenance ou non.
-               \end{itemize}
+\section{Portail web avec intranet}
+	Avant tout, il semble évident de revoir les moyens de communication au sein de GSTP. Pour cela, on propose de mettre en place un Intranet. Cet intranet sera la base de l'architecture applicative et ce pour plusieurs raisons. L'intranet est un puissant moyen de communication au sein d'une organisation. Il aide à trouver et à visualiser rapidement des informations dans des documents électroniques et des applications. Via une interface Web simple d'utilisation et ergonomique, les employés de GSTP pourront accéder aux données de la base de données centralisant toutes les informations pertinentes concernant l'entreprise. De plus, elle servira de plateforme pour développer et déployer les applications. Les accès aux ressources et applications seront gérés par type d'utilisateurs, des droits seront accordés à chaque groupe d'utilisateur. L'intranet possède une architecture qui repose sur plusieurs types de composants comme des serveurs, des routeurs, firewall.
+	Un portail web sera mis en place. Le réseau sera raisonnablement sécurisé et ne sera accessible que par le siège, les sites secondondaires et les chantiers. Le portail web sur lequel repose l'intranet offre un large éventail de ressources et de services comme la personnalisation de l'espace de travail de chacun et la messagerie électronique. Ainsi, chaque employé de GSTP possèdera un compte mail et pourra communiquer avec quiconque de l'entreprise via Internet/Intranet, d'où le recours à un webmail.
 
-        Pour la planification de la maintenance :
-               \begin{itemize}
-	               \item Consulter le planning avant une intervention puis le mettre à jour après l'intervention.
-	               \item Gérer les interventions urgentes
-	               \item Annuler/Modifier l'état de la planification d'une maintenance
-               \end{itemize}
+\section{Description des applications}
 
-	\subsection{Interface}
-	L'interface proposera une visualisation des données et des opérations ergonomique et intuitive.
+    \subsection{Application planification/gestion du matériel}
+	    \subsubsection{Objectif}
+	    Ce module est destiné à être utilisé pour planifier les affectations du matériel aux chantiers, optimiser la gestion du parc matériel (disponibilité et coûts) et planifier les maintenances.
+	    A partir des données collectées lors des maintenances, l'exploitation des machines, lors de la non disponibilité d'une machine (impliquant une location), l'outil génère des statistiques et peut ainsi suggérer à l'utilisateur des achats, un réajustement du niveau des stocks.
+	    Il conserve un historique de données qu'il peut analyser afin d'optimiser le processus de planification. Les principaux besoins de la direction matériel couvert par ce module sont :
+            Pour la planification des affectations du matériel :
+                   \begin{itemize}
+	                   \item Consulter le planning pour vérifier si le matériel est disponible.
+	                   \item Affecter un matériel à un chantier s'il est disponible.
+	                   \item Annuler/Modifier une affectation.
+                   \end{itemize}
 
-\section {Application  Suivi de chantier}
-	\subsection {Objectif}
-	Ce module est principalement destiné à être utilisé directement sur le chantier par les chefs de chantiers utilisant des PDAs.
-Les principales contraintes auxquelles est soumis ce module sont : une grande lisibilité des informations sur des appareils de taille réduite, une utilisation simplifiée par des écrans tactiles souvent présents sur les appareils mobiles, et enfin une bonne ergonomie étant donné que les utilisateurs
-seront totalement des non-informaticiens et n'utilisent pas forcement à une fréquence régulière des outils informatiques.
+            Pour la gestion du parc matériel :
+                   \begin{itemize}
+	                   \item Signaler la restitution d'un matériel.
+	                   \item Signaler l'affectation d'un matériel
+	                   \item Signaler le non retour d'un matériel pour la date prévue
+	                   \item Signaler la réception d'une livraison
+	                   \item Signaler le pointage d'un matériel
+	                   \item Consulter le planning de maintenance pour vérifier si un matériel est toujours en maintenance ou non.
+                   \end{itemize}
 
-        Le suivi matériel consiste en la visualisation en temps réel du matériel présent sur site.  Cette application sera principalement utilisé par les chefs de chantiers afin d'être en mesure d'effectuer la planification des travaux de la journée.
-	De plus, les responsables pourront effectuer une demande de prolongation en cas de retard pour disposer plus longtemps d'une machine ou éventuellement signaler une panne. Ils pourront également effectuer des commandes de matériel.
+            Pour la planification de la maintenance :
+                   \begin{itemize}
+	                   \item Consulter le planning avant une intervention puis le mettre à jour après l'intervention.
+	                   \item Gérer les interventions urgentes
+	                   \item Annuler/Modifier l'état de la planification d'une maintenance
+                   \end{itemize}
 
-	\subsection {Interface}
-	Ce application se présentera dans l'application finale sous la forme d'un tableau permettant de visualiser l'état du matériel présent sur le chantier. 
+	    \subsubsection{Interface}
+	    L'interface proposera une visualisation des données et des opérations ergonomique et intuitive.
 
-\section{Application Achat/Location}
-	Le service achat et location travaillant en étroite collaboration, un seul module assure la réalisation de leurs tâches respectives. Les membres du service Achat dispose de fiches fournisseurs décrivant les partenaires privilégiés de GSTP. Ils peuvent à tout moment éditer une commande de matériel ou de pièces de rechanges. Notons que du matériel peut également être loué à nos fournisseurs (lors d’une carence). D’autre part les divers achats doivent être réalisés en fonction de ce qui a pu être planifié dans le module planification. 
-	Les magasiniers présents sur chacun des sous-sites peuvent également émettre des demandes. En effet, il se peut que les outils d’aide à la décision mise en place préconisent un réajustement des stocks pour un type de pièces spécifique.
+    \subsection {Application  Suivi de chantier}
+	    \subsubsection {Objectif}
+	    Ce module est principalement destiné à être utilisé directement sur le chantier par les chefs de chantiers utilisant des PDAs.
+    Les principales contraintes auxquelles est soumis ce module sont : une grande lisibilité des informations sur des appareils de taille réduite, une utilisation simplifiée par des écrans tactiles souvent présents sur les appareils mobiles, et enfin une bonne ergonomie étant donné que les utilisateurs
+    seront totalement des non-informaticiens et n'utilisent pas forcement à une fréquence régulière des outils informatiques.
 
-	En ce qui concerne la location, les ressources du service disposent d’informations précises sur les machines dont GSTP est propriétaire. Ainsi, via les informations agrégées par le module planification : les diverses maintenances planifiées ou utilisations prévues des machines par nos chantiers ; le matériel disponible à la location est parfaitement connu. 
-	D’autre part, lors d’une demande émanant d’une entreprise externe, un devis peut-être édité. Les factures sont quant à elles éditables via le module de facturation. Enfin, lors de la location d’une machine, la durée et le client doivent être indiqué dans un fiche location.
+            Le suivi matériel consiste en la visualisation en temps réel du matériel présent sur site.  Cette application sera principalement utilisé par les chefs de chantiers afin d'être en mesure d'effectuer la planification des travaux de la journée.
+	    De plus, les responsables pourront effectuer une demande de prolongation en cas de retard pour disposer plus longtemps d'une machine ou éventuellement signaler une panne. Ils pourront également effectuer des commandes de matériel.
 
-	Pour la réalisation de cette application, on pourra capitaliser sur celles existantes, notamment celle de gestion des fournisseurs. Il faudra juste ajouter aux applications existantes, quelques fonctionnalités pertinentes.
+	    \subsubsection {Interface}
+	    Ce application se présentera dans l'application finale sous la forme d'un tableau permettant de visualiser l'état du matériel présent sur le chantier. 
 
-	\subsection{Interface}
-	L'interface proposera une visualisation des données et des opérations ergonomique et intuitive.
+    \subsection{Application Achat/Location}
+	    \subsubsection{Objectif}
+	    Le service achat et location travaillant en étroite collaboration, un seul module assure la réalisation de leurs tâches respectives. Les membres du service Achat dispose de fiches fournisseurs décrivant les partenaires privilégiés de GSTP. Ils peuvent à tout moment éditer une commande de matériel ou de pièces de rechanges. Notons que du matériel peut également être loué à nos fournisseurs (lors d’une carence). D’autre part les divers achats doivent être réalisés en fonction de ce qui a pu être planifié dans le module planification. 
+	    Les magasiniers présents sur chacun des sous-sites peuvent également émettre des demandes. En effet, il se peut que les outils d’aide à la décision mise en place préconisent un réajustement des stocks pour un type de pièces spécifique.
 
-\section {Application Facturation}
+	    En ce qui concerne la location, les ressources du service disposent d’informations précises sur les machines dont GSTP est propriétaire. Ainsi, via les informations agrégées par le module planification : les diverses maintenances planifiées ou utilisations prévues des machines par nos chantiers ; le matériel disponible à la location est parfaitement connu. 
+	    D’autre part, lors d’une demande émanant d’une entreprise externe, un devis peut-être édité. Les factures sont quant à elles éditables via le module de facturation. Enfin, lors de la location d’une machine, la durée et le client doivent être indiqué dans un fiche location.
 
-	\subsection {Objectif}
-	Le but de ce module est de pouvoir facturer les chantiers pour les matériels utilisés, les données d'exploitation et de maintenance ainsi que les temps de main d'oeuvre sont indiqués en temps réel, afin d'éviter les montées en charge en fin de mois. Cette application pourra être utilisé directement sur le chantier pour avoir une idée de la facture provisoire et au siège pour éditer les factures de demande de matériel des différents chantiers (éventuellement externes). Les principales fonctionnalités proposer par l'application seront :
+	    Pour la réalisation de cette application, on pourra capitaliser sur celles existantes, notamment celle de gestion des fournisseurs. Il faudra juste ajouter aux applications existantes, quelques fonctionnalités pertinentes.
 
-       \begin{itemize}
-	    \item Calcul du barème mensuel
-	    \item Consulter et modifier des données de calcul du barème (amortissement, main d'œuvre…)
-	    \item Élaboration, consultation, modification, suppression, édition d'un devis
-	    \item Élaboration, consultation, modification, suppression, édition d'une facture
-       \end{itemize}
+	    \subsubsection{Interface}
+	    L'interface proposera une visualisation des données et des opérations ergonomique et intuitive.
 
-	\subsection {Interface}
-	L'interface de ce module pourra varier en fonction du poste de l'utilisateur : un chef de chantier pourra uniquement visualiser les factures afin de vérifier les dates de commande, le type et la quantité de matériel demandé sur le chantier, tandis qu'un comptable du siège pourra créer et éditer les factures présentes afin de facturer les différents chantiers en fonction du matériel requis.
+    \subsection {Application Facturation}
 
-\section{Application des Stock}
-	\subsection{Objectif}
-	L'application stock sera destiné à être utilisé pour gérer en temps réel la quantité et le mouvement d'un nombre relativement grand d'articles en stock ou à stocker. L'utilisateur sera capable bien sur d'exécuter des commandes basiques pour saisir et documenter les stocks en gérant la réception, la sortie, les prélèvements de stocks et le conditionnement. En outre cette application permettra à l'utilisateur d'optimiser le flux des biens et d'améliorer la rotation de stocks en analysant les historiques des données. On pourra connaître, que ce soit au siège ou aux dépôts des sites secondaires, l'état des stocks.
+	    \subsubsection {Objectif}
+	    Le but de ce module est de pouvoir facturer les chantiers pour les matériels utilisés, les données d'exploitation et de maintenance ainsi que les temps de main d'oeuvre sont indiqués en temps réel, afin d'éviter les montées en charge en fin de mois. Cette application pourra être utilisé directement sur le chantier pour avoir une idée de la facture provisoire et au siège pour éditer les factures de demande de matériel des différents chantiers (éventuellement externes). Les principales fonctionnalités proposer par l'application seront :
 
-	\subsection{Interface}
-	L'application permet de visualiser les mouvements, la quantité restante...de stocks, d'exporter les données sous plusieurs formats. Elle devra être capable de s'intégrer avec les autres applications pour échanger les données et il doit être aussi facile à utiliser en raison de la diversité du niveau de connaissances informatiques des utilisateurs.
+           \begin{itemize}
+	        \item Calcul du barème mensuel
+	        \item Consulter et modifier des données de calcul du barème (amortissement, main d'œuvre…)
+	        \item Élaboration, consultation, modification, suppression, édition d'un devis
+	        \item Élaboration, consultation, modification, suppression, édition d'une facture
+           \end{itemize}
 
-% ------------------------------------------------------>>>>>>>>>>>>>>>>>>>  Faire un schéma modélisant les applications et leurs modules
+	    \subsubsection {Interface}
+	    L'interface de ce module pourra varier en fonction du poste de l'utilisateur : un chef de chantier pourra uniquement visualiser les factures afin de vérifier les dates de commande, le type et la quantité de matériel demandé sur le chantier, tandis qu'un comptable du siège pourra créer et éditer les factures présentes afin de facturer les différents chantiers en fonction du matériel requis.
+
+    \subsection{Application des Stock}
+	    \subsubsection{Objectif}
+	    L'application stock sera destiné à être utilisé pour gérer en temps réel la quantité et le mouvement d'un nombre relativement grand d'articles en stock ou à stocker. L'utilisateur sera capable bien sur d'exécuter des commandes basiques pour saisir et documenter les stocks en gérant la réception, la sortie, les prélèvements de stocks et le conditionnement. En outre cette application permettra à l'utilisateur d'optimiser le flux des biens et d'améliorer la rotation de stocks en analysant les historiques des données. On pourra connaître, que ce soit au siège ou aux dépôts des sites secondaires, l'état des stocks.
+
+	    \subsubsection{Interface}
+	    L'application permet de visualiser les mouvements, la quantité restante...de stocks, d'exporter les données sous plusieurs formats. Elle devra être capable de s'intégrer avec les autres applications pour échanger les données et il doit être aussi facile à utiliser en raison de la diversité du niveau de connaissances informatiques des utilisateurs.
+
+% Faire un schéma modélisant les applications et leurs modules
